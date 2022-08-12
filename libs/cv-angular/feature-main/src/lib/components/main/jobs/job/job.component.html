@@ -1,0 +1,29 @@
+<div class="employ">
+  <div class="employ-data" [ngClass]="{ current: job.isCurrentJob }">
+    <p class="employ-header">
+      <span class="employ-role-name">{{ job.roleName }}</span>
+      at
+      <span class="employ-company">{{ job.company }},</span>
+      <span class="employ-location">{{ job.location }}</span>
+    </p>
+    <p class="employ-date-range">
+      <span class="date-start_month">{{ job.getDateInfo('start').month }}</span>
+      <span class="date-start_year">{{ job.getDateInfo('start').year }}</span>
+      -
+      <ng-container *ngIf="!job.isCurrentJob">
+        <span class="date-end_month">{{ job.getDateInfo('end').month }}</span>
+        <span class="date-end_year">{{ job.getDateInfo('end').year }}</span>
+      </ng-container>
+      <ng-container *ngIf="job.isCurrentJob">
+        <span class="present">Present</span>
+      </ng-container>
+    </p>
+    <div class="employ-functions">
+      <ul class="functions-list">
+        <li class="function-item" *ngFor="let function of job.jobFunctions">
+          {{ function }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

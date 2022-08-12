@@ -3,6 +3,17 @@
   "version": 2,
   "projects": {
     "cv-angular": "apps/cv-angular",
-    "cv-angular-e2e": "apps/cv-angular-e2e"
+    "cv-angular-e2e": "apps/cv-angular-e2e",
+    "cv-angular-feature-main": "libs/cv-angular/feature-main",
+    "data": "libs/data",
+    "myapp": "apps/myapp",
+    "myapp-e2e": "apps/myapp-e2e",
+    "myapp-feature-about": "libs/myapp/feature-about",
+    "myapp-feature-home": "libs/myapp/feature-home",
+    "myapp-feature-main": "libs/myapp/feature-main",
+    "myapp-feature-settings": "libs/myapp/feature-settings",
+    "shared-styles": "libs/shared-styles",
+    "shared-ui": "libs/shared/ui",
+    "shared-util-formating": "libs/shared/util-formating"
   }
 }

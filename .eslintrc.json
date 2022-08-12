@@ -13,8 +13,20 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "domain:myapp",
+                "onlyDependOnLibsWithTags": ["domain:myapp", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:cv-angular",
+                "onlyDependOnLibsWithTags": [
+                  "domain:cv-angular",
+                  "domain:shared",
+                  "domain:data"
+                ]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": ["domain:shared"]
               }
             ]
           }
