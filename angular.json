@@ -5,6 +5,8 @@
     "cv-angular": "apps/cv-angular",
     "cv-angular-e2e": "apps/cv-angular-e2e",
     "cv-angular-feature-main": "libs/cv-angular/feature-main",
+    "cv-react": "apps/cv-react",
+    "cv-react-e2e": "apps/cv-react-e2e",
     "data": "libs/data",
     "myapp": "apps/myapp",
     "myapp-e2e": "apps/myapp-e2e",
