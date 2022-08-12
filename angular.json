@@ -7,6 +7,7 @@
     "cv-angular-feature-main": "libs/cv-angular/feature-main",
     "cv-react": "apps/cv-react",
     "cv-react-e2e": "apps/cv-react-e2e",
+    "cv-react-feature-main": "libs/cv-react/feature-main",
     "data": "libs/data",
     "myapp": "apps/myapp",
     "myapp-e2e": "apps/myapp-e2e",

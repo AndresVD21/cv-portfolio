@@ -1,4 +1,4 @@
-@import '../../../../../shared-styles/src/lib/assets/styles/index.scss';
+@import '../../../../../../shared-styles/src/lib/assets/styles/index.scss';
 
 .cv-navbar {
   padding: 1em 0;
@@ -23,7 +23,6 @@
     z-index: 100;
     display: block;
     background-color: transparent;
-    border: none;
 
     &:focus {
       outline: none;

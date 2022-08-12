@@ -25,6 +25,14 @@
                 ]
               },
               {
+                "sourceTag": "domain:cv-react",
+                "onlyDependOnLibsWithTags": [
+                  "domain:cv-react",
+                  "domain:shared",
+                  "domain:data"
+                ]
+              },
+              {
                 "sourceTag": "domain:shared",
                 "onlyDependOnLibsWithTags": ["domain:shared"]
               }

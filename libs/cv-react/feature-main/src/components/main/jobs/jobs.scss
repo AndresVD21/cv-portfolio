@@ -1,0 +1,15 @@
+@import '../../../../../../shared-styles/src/lib/assets/styles/index.scss';
+
+.employ-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+@include screen(lg) {
+  .employ-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+}

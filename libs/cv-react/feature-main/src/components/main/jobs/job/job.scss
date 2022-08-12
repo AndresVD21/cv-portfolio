@@ -1,0 +1,55 @@
+@import '../../../../../../../shared-styles/src/lib/assets/styles/index.scss';
+
+.employ {
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+  .employ-data {
+    padding: 1em;
+    border-radius: 8px;
+    background-color: $sky-dark;
+    transition: all 0.3s ease-in-out;
+
+    &.current {
+      box-shadow: rgba(207, 207, 207, 0.134) 0px 5px 15px;
+      background-color: $cyan;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+
+    .employ-header {
+      margin-bottom: 0.5em;
+      .employ-role-name {
+        font-weight: bold;
+        margin-right: 0.2em;
+      }
+      .employ-company {
+        margin-left: 0.2em;
+      }
+      .employ-location {
+        margin-left: 0.2em;
+      }
+    }
+    .employ-date-range {
+      [class^='date-start_'],
+      [class^='date-end_'] {
+        margin-right: 0.2em;
+      }
+      .present,
+      .date-end_month {
+        margin-left: 0.2em;
+      }
+    }
+    .employ-functions {
+      .functions-list {
+        list-style: disc;
+        padding: 1em 1em 0;
+        .function-item:not(:last-child) {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}

@@ -21,6 +21,9 @@
       "@cv-portfolio/cv-angular/feature-main/navbar": [
         "libs/cv-angular/feature-main/navbar/src/index.ts"
       ],
+      "@cv-portfolio/cv-react/feature-main": [
+        "libs/cv-react/feature-main/src/index.ts"
+      ],
       "@cv-portfolio/data": ["libs/data/src/index.ts"],
       "@cv-portfolio/myapp/feature-about": [
         "libs/myapp/feature-about/src/index.ts"
