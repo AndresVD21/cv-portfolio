@@ -13,15 +13,12 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "domain:myapp",
-                "onlyDependOnLibsWithTags": ["domain:myapp", "domain:shared"]
-              },
-              {
                 "sourceTag": "domain:cv-angular",
                 "onlyDependOnLibsWithTags": [
                   "domain:cv-angular",
                   "domain:shared",
-                  "domain:data"
+                  "domain:data",
+                  "domain:api"
                 ]
               },
               {
@@ -29,8 +26,13 @@
                 "onlyDependOnLibsWithTags": [
                   "domain:cv-react",
                   "domain:shared",
-                  "domain:data"
+                  "domain:data",
+                  "domain:api"
                 ]
+              },
+              {
+                "sourceTag": "domain:api",
+                "onlyDependOnLibsWithTags": ["domain:data"]
               },
               {
                 "sourceTag": "domain:shared",
