@@ -48,7 +48,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "cv-react:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "apps/cv-react/proxy.conf.json"
       },
       "configurations": {
         "development": {

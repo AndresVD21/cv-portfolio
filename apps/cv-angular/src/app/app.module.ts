@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { CvAngularFeatureMainModule } from '@cv-portfolio/cv-angular/feature-main';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, CvAngularFeatureMainModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule, CvAngularFeatureMainModule],
   providers: [],
   bootstrap: [AppComponent],
 })
