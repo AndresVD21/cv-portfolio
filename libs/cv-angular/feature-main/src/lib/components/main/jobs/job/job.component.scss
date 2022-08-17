@@ -5,6 +5,8 @@
     margin-bottom: 0.5em;
   }
   .employ-data {
+    display: flex;
+    flex-direction: column;
     padding: 1em;
     border-radius: 8px;
     background-color: $sky-dark;
@@ -17,6 +19,11 @@
 
     &:hover {
       transform: scale(1.05) translateY(-10px);
+    }
+
+    .current-job-icon {
+      margin: 0 auto;
+      margin-bottom: 1em;
     }
 
     .employ-header {

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Job } from '@cv-portfolio/data';
+import { JobModel } from '@cv-portfolio/data';
 
 @Component({
   selector: 'cv-portfolio-jobs',
@@ -7,5 +7,5 @@ import { Job } from '@cv-portfolio/data';
   styleUrls: ['./jobs.component.scss'],
 })
 export class JobsComponent {
-  @Input() jobs: Job[] = [];
+  @Input() jobs: JobModel[] = [];
 }

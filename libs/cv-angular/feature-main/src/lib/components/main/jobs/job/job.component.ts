@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Job } from '@cv-portfolio/data';
+import { Component, Input } from '@angular/core';
+import { JobModel } from '@cv-portfolio/data';
 
 @Component({
   selector: 'cv-portfolio-job',
@@ -8,5 +8,5 @@ import { Job } from '@cv-portfolio/data';
 })
 export class JobComponent {
   @Input()
-  job!: Job;
+  job!: JobModel;
 }

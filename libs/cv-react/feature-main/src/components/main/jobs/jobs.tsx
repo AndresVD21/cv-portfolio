@@ -1,10 +1,10 @@
-import { Job } from '@cv-portfolio/data';
+import { JobModel } from '@cv-portfolio/data';
 import CvReactJob from './job/job';
 import './jobs.scss';
 
 /* eslint-disable-next-line */
 export interface JobsProps {
-  jobs: Job[];
+  jobs: JobModel[];
 }
 
 const Jobs: React.FC<JobsProps> = ({ jobs }) => {
