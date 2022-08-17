@@ -1,4 +1,3 @@
-import './header.module.scss';
 import './header.scss';
 import Nav from './nav/nav';
 

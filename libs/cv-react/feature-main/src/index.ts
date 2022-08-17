@@ -1,3 +1,4 @@
+export * from './components/footer/footer';
 export * from './components/main/jobs/job/job';
 export * from './components/main/jobs/jobs';
 export * from './components/header/nav/nav';

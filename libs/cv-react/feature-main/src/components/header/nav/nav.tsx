@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './nav.module.scss';
 import './nav.scss';
 
 /* eslint-disable-next-line */

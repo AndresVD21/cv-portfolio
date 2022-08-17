@@ -1,14 +1,1 @@
-/* You can add global styles to this file, and also import other style files */
-@import '../../../libs/shared-styles/src/lib/assets/styles/index.scss';
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  color: $slate-light;
-}
+@use '../../../libs/shared-styles/src/lib/index.scss';

@@ -6,6 +6,7 @@ import {
   faFire,
   faFolderOpen,
 } from '@fortawesome/free-solid-svg-icons';
+import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { Subject, takeUntil } from 'rxjs';
 import { JobsService } from '../../services/jobs.service';
 
@@ -20,7 +21,7 @@ export class MainComponent implements OnInit, OnDestroy {
   jobs: JobModel[] = [];
 
   constructor(private jobsService: JobsService, library: FaIconLibrary) {
-    library.addIcons(faAddressCard, faFolderOpen, faFire);
+    library.addIcons(faAddressCard, faFolderOpen, faFire, faAngular);
   }
 
   ngOnInit(): void {

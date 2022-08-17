@@ -1,16 +1,1 @@
-@import '../../../../../shared-styles/src/lib/assets/styles/index.scss';
-
-.cv-header {
-  background: linear-gradient(to bottom, transparent 10%, $blue-dark 90%),
-    url('../../../../assets/images/yourname.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 3em 2em;
-  color: $slate-light;
-}
-
-@include screen(lg) {
-  .cv-header {
-    padding: 3em 6em;
-  }
-}
+@use '../../../../../shared-styles/src/lib/component-styles/header-wrapper.scss';

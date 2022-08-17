@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { JobsComponent } from './components/main/jobs/jobs.component';
 import { JobComponent } from './components/main/jobs/job/job.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export const cvAngularFeatureMainRoutes: Route[] = [];
 
@@ -17,7 +18,13 @@ export const cvAngularFeatureMainRoutes: Route[] = [];
     SharedUiModule,
     SharedUtilFormatingModule,
   ],
-  declarations: [MainComponent, HeaderComponent, JobsComponent, JobComponent],
+  declarations: [
+    MainComponent,
+    HeaderComponent,
+    JobsComponent,
+    JobComponent,
+    FooterComponent,
+  ],
   exports: [MainComponent, HeaderComponent],
 })
 export class CvAngularFeatureMainModule {}
