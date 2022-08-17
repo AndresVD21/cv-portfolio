@@ -1,0 +1,55 @@
+@import '../variables';
+
+.employ {
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+  .employ-data {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: $sky-dark;
+    transition: all 0.3s ease-in-out;
+
+    &.current {
+      box-shadow: rgba(207, 207, 207, 0.134) 0px 5px 15px;
+      background-color: $cyan;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+
+    .current-job-icon {
+      margin: 0 auto;
+      margin-bottom: 1em;
+    }
+
+    .employ-header {
+      margin-bottom: 0.5em;
+      .employ-role-name {
+        font-weight: bold;
+      }
+      .employ-location {
+        margin-left: 0.2em;
+      }
+    }
+    .employ-date-range {
+      [class^='date-start_'],
+      [class^='date-end_'],
+      .present {
+        margin: 0 0.2em;
+      }
+    }
+    .employ-functions {
+      .functions-list {
+        list-style: disc;
+        padding: 1em 1em 0;
+        .function-item:not(:last-child) {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}
