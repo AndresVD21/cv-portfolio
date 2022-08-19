@@ -21,8 +21,14 @@
       "@cv-portfolio/cv-angular/feature-main/navbar": [
         "libs/cv-angular/feature-main/navbar/src/index.ts"
       ],
+      "@cv-portfolio/cv-angular/feature-skills": [
+        "libs/cv-angular/feature-skills/src/index.ts"
+      ],
       "@cv-portfolio/cv-react/feature-main": [
         "libs/cv-react/feature-main/src/index.ts"
+      ],
+      "@cv-portfolio/cv-react/feature-skills": [
+        "libs/cv-react/feature-skills/src/index.ts"
       ],
       "@cv-portfolio/data": ["libs/data/src/index.ts"],
       "@cv-portfolio/myapp/feature-about": [
@@ -38,6 +44,7 @@
         "libs/myapp/feature-settings/src/index.ts"
       ],
       "@cv-portfolio/shared-styles": ["libs/shared-styles/src/index.ts"],
+      "@cv-portfolio/shared/react-ui": ["libs/shared/react-ui/src/index.ts"],
       "@cv-portfolio/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@cv-portfolio/shared/util-formating": [
         "libs/shared/util-formating/src/index.ts"

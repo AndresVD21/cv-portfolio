@@ -1,4 +1,4 @@
-import Header from '../components/header/header';
+import { Header } from '@cv-portfolio/shared/react-ui';
 import Main from '../components/main/main';
 
 import './cv-react-feature-main.scss';
