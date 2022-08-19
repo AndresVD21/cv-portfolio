@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/cv-angular/feature-skills/src",
+  "prefix": "cv-portfolio",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cv-angular/feature-skills"],
+      "options": {
+        "jestConfig": "libs/cv-angular/feature-skills/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cv-angular/feature-skills/**/*.ts",
+          "libs/cv-angular/feature-skills/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:cv-angular"]
+}
