@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cv-portfolio-nav',
@@ -8,7 +9,13 @@ import { Component } from '@angular/core';
 export class NavComponent {
   menuOpen = false;
 
+  constructor(private router: Router) {}
+
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
   }
 }

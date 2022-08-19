@@ -1,30 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
 import { SharedUiModule } from '@cv-portfolio/shared/ui';
 import { SharedUtilFormatingModule } from '@cv-portfolio/shared/util-formating';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { JobsComponent } from './components/main/jobs/jobs.component';
 import { JobComponent } from './components/main/jobs/job/job.component';
-import { FooterComponent } from './components/footer/footer.component';
-
-export const cvAngularFeatureMainRoutes: Route[] = [];
+import { CvAngularFeatureMainRoutingModule } from './cv-angular-feature-main.routing';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    CvAngularFeatureMainRoutingModule,
     SharedUiModule,
     SharedUtilFormatingModule,
   ],
-  declarations: [
-    MainComponent,
-    HeaderComponent,
-    JobsComponent,
-    JobComponent,
-    FooterComponent,
-  ],
-  exports: [MainComponent, HeaderComponent],
+  declarations: [MainComponent, HeaderComponent, JobsComponent, JobComponent],
+  exports: [CvAngularFeatureMainRoutingModule, MainComponent, HeaderComponent],
 })
 export class CvAngularFeatureMainModule {}

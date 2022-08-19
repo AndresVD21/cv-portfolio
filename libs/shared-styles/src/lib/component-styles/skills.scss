@@ -1,0 +1,18 @@
+@use '../variables';
+
+.cv-portfolio-skills-container {
+  background-color: variables.$blue-dark;
+
+  .working-technologies {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 70%;
+    padding: 1em;
+    border: 3px solid variables.$slate-light;
+    margin: 0 auto;
+    // .tech-icon {
+
+    // }
+  }
+}
