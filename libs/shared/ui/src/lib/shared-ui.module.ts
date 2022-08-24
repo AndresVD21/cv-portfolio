@@ -6,6 +6,7 @@ import { NavComponent } from './angular-components/nav/nav.component';
 import { HeaderComponent } from './angular-components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './angular-components/footer/footer.component';
+import { FillPipe } from './pipes/fill.pipe';
 
 @NgModule({
   imports: [CommonModule, RouterModule, FontAwesomeModule],
@@ -14,6 +15,7 @@ import { FooterComponent } from './angular-components/footer/footer.component';
     NavComponent,
     HeaderComponent,
     FooterComponent,
+    FillPipe,
   ],
   exports: [
     FontAwesomeModule,
@@ -21,6 +23,7 @@ import { FooterComponent } from './angular-components/footer/footer.component';
     NavComponent,
     HeaderComponent,
     FooterComponent,
+    FillPipe,
   ],
 })
 export class SharedUiModule {}
