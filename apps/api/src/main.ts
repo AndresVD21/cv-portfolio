@@ -5,6 +5,7 @@
 
 import * as express from 'express';
 import { jobHistory } from './app/job-history';
+import { getSkills } from './app/skills';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get('/api', (req, res) => {
 });
 
 jobHistory(app);
+getSkills(app);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {

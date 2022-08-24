@@ -1,4 +1,4 @@
-import { Job } from '@cv-portfolio/data';
+import { Job, JobDTO, ResponseDTO } from '@cv-portfolio/data';
 import { Express } from 'express';
 import { mapJobs } from './mappers/jobMapper';
 
@@ -33,5 +33,8 @@ const jobs: Job[] = [
 ];
 
 export function jobHistory(app: Express) {
-  app.get('/api/job-history', (req, resp) => resp.send(mapJobs(jobs)));
+  const response: ResponseDTO<JobDTO[]> = {
+    data: mapJobs(jobs),
+  };
+  app.get('/api/job-history', (req, resp) => resp.send(response));
 }
