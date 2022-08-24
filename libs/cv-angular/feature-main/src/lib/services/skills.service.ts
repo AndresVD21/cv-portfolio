@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import {
-  JobDTO,
-  JobModel,
   ResponseDTO,
   ResponseModel,
+  Skill,
+  SkillDTO,
 } from '@cv-portfolio/data';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class JobsService {
+export class SkillsService {
   constructor(private httpClient: HttpClient) {}
 
-  getJobHistory(): Observable<ResponseModel<JobModel[]>> {
-    return this.httpClient.get<ResponseDTO<JobDTO[]>>('/api/job-history');
+  getSkills(): Observable<ResponseModel<Skill[]>> {
+    return this.httpClient.get<ResponseDTO<SkillDTO[]>>('/api/skills');
   }
 }

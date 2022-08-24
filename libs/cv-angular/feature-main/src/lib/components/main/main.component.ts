@@ -32,8 +32,8 @@ export class MainComponent implements OnInit, OnDestroy {
     this.jobsService
       .getJobHistory()
       .pipe(takeUntil(this.$destroy))
-      .subscribe((data) => {
-        this.jobs = [...data];
+      .subscribe(({ data }) => {
+        this.jobs = data ? [...data] : [];
       });
   }
 
