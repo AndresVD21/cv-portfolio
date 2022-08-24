@@ -1,13 +1,28 @@
 <main class="cv-portfolio-skills-container">
   <cv-portfolio-header></cv-portfolio-header>
   <section class="working-technologies">
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'html5']"></fa-icon>
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'js']"></fa-icon>
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'css3']"></fa-icon>
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'angular']"></fa-icon>
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'react']"></fa-icon>
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'sass']"></fa-icon>
-    <fa-icon class="tech-icon" size="3x" [icon]="['fab', 'git']"></fa-icon>
+    <h1 class="title">Technologies on my toolbox</h1>
+    <div class="technologies-container">
+      <fa-icon
+        class="tech-icon html-orange"
+        [icon]="['fab', 'html5']"
+      ></fa-icon>
+      <fa-icon class="tech-icon js-yellow" [icon]="['fab', 'js']"></fa-icon>
+      <fa-icon class="tech-icon css-blue" [icon]="['fab', 'css3']"></fa-icon>
+      <fa-icon
+        class="tech-icon angular-red"
+        [icon]="['fab', 'angular']"
+      ></fa-icon>
+      <fa-icon class="tech-icon react-blue" [icon]="['fab', 'react']"></fa-icon>
+      <fa-icon class="tech-icon rose" [icon]="['fab', 'sass']"></fa-icon>
+      <fa-icon class="tech-icon git-orange" [icon]="['fab', 'git']"></fa-icon>
+    </div>
+  </section>
+  <section class="skills">
+    <cv-portfolio-skill
+      *ngFor="let skill of skills"
+      [skill]="skill"
+      [numberOfBars]="numberOfBars"
+    ></cv-portfolio-skill>
   </section>
 </main>
-<cv-portfolio-footer></cv-portfolio-footer>

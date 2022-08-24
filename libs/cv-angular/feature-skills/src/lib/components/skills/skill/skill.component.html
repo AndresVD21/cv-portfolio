@@ -1,0 +1,30 @@
+<div
+  class="skill"
+  [style.grid-template-columns]="'repeat(' + numberOfBars + ', 1fr)'"
+>
+  <span class="skill-name"
+    >{{ skill.skillName }}
+    <span class="skill-level-num">({{ skill.skillLevel }})</span>
+  </span>
+  <cv-portfolio-skill-level
+    *ngFor="let level of numberOfBars | fill; let i = index"
+    [level]="skill.skillLevel"
+    [base]="((i + 1) * 100) / numberOfBars"
+  ></cv-portfolio-skill-level>
+  <!-- <cv-portfolio-skill-level
+    [level]="skill.skillLevel"
+    [base]="25"
+  ></cv-portfolio-skill-level>
+  <cv-portfolio-skill-level
+    [level]="skill.skillLevel"
+    [base]="50"
+  ></cv-portfolio-skill-level>
+  <cv-portfolio-skill-level
+    [level]="skill.skillLevel"
+    [base]="75"
+  ></cv-portfolio-skill-level>
+  <cv-portfolio-skill-level
+    [level]="skill.skillLevel"
+    [base]="100"
+  ></cv-portfolio-skill-level> -->
+</div>
