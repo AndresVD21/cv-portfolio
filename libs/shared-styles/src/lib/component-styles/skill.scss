@@ -1,0 +1,28 @@
+@use '../variables';
+@use '../queries';
+
+.skill {
+  display: grid;
+  // grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em 0;
+
+  .skill-name {
+    grid-column: 1/-1;
+    align-self: center;
+  }
+  .skill-level-num {
+    font-weight: lighter;
+  }
+}
+
+@include queries.screen(lg) {
+  .skill {
+    max-width: 70%;
+    margin: 0 auto;
+    .skill-name {
+      font-size: 1.2rem;
+    }
+  }
+}

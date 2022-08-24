@@ -1,18 +1,36 @@
 @use '../variables';
+@use '../colors';
 
 .cv-portfolio-skills-container {
   background-color: variables.$blue-dark;
+  height: 100%;
 
   .working-technologies {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    max-width: 70%;
+    max-width: 90%;
     padding: 1em;
     border: 3px solid variables.$slate-light;
     margin: 0 auto;
-    // .tech-icon {
+    .title {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-bottom: 1em;
+      display: block;
+      font-weight: lighter;
+      text-align: center;
+    }
+    .technologies-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
 
-    // }
+      .tech-icon {
+        font-size: 2.5em;
+      }
+    }
+  }
+  .skills {
+    padding: 1em;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
