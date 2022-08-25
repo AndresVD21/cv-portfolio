@@ -1,5 +1,5 @@
-<cv-portfolio-header-main></cv-portfolio-header-main>
-<div class="cv-portfolio-main-container">
+<main class="cv-portfolio-main-container feature-container">
+  <cv-portfolio-header-main></cv-portfolio-header-main>
   <section id="about-me" class="about container">
     <h2 class="section-title">
       <fa-icon [icon]="['fas', 'address-card']"></fa-icon>
@@ -13,11 +13,12 @@
       methodologies and self learning.
     </p>
   </section>
-  <section id="employment-history" class="container">
+  <section id="employment-history" class="jobs container">
     <h2 class="section-title">
       <fa-icon [icon]="['fas', 'folder-open']"></fa-icon>
       Jobs
     </h2>
     <cv-portfolio-jobs [jobs]="jobs"></cv-portfolio-jobs>
   </section>
-</div>
+  <cv-portfolio-footer></cv-portfolio-footer>
+</main>
