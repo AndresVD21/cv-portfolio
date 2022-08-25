@@ -14,12 +14,22 @@ import { Skill } from './skill/skill';
 import { SkillModel } from '@cv-portfolio/data';
 import { useEffect, useState } from 'react';
 import { getSkillList } from '../../services/skills.service';
+import { faWandSparkles } from '@fortawesome/free-solid-svg-icons';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {}
 
 export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
-  library.add(faHtml5, faJs, faCss3, faAngular, faReact, faSass, faGit);
+  library.add(
+    faHtml5,
+    faJs,
+    faCss3,
+    faAngular,
+    faReact,
+    faSass,
+    faGit,
+    faWandSparkles
+  );
 
   const numberOfBars = 4;
   const [skills, setSkills] = useState<SkillModel[]>([]);
@@ -48,7 +58,12 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
           <FontAwesomeIcon icon={faGit} className="tech-icon git-orange" />
         </div>
       </section>
-      <section className="skills">
+      <section className="skills container">
+        <h2 className="section-title">
+          <FontAwesomeIcon icon={faWandSparkles} />
+          <span> </span>
+          Skills
+        </h2>
         {skills.map((skill) => (
           <Skill
             key={skill.skillId}
