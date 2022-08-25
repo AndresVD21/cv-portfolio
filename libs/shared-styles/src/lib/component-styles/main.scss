@@ -1,37 +1,20 @@
 @use '../variables';
 @use '../queries';
+@use '../utilities-styles/section.scss';
+// @use '../utilities-styles/feature-container.scss';
+@use '../mixins/container.scss' as container;
 
 .cv-portfolio-main-container {
   background-color: variables.$blue-dark;
-  height: 100vh;
 }
 
-.container {
-  padding: 1em 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .section-title {
-    padding: 0.1em 0;
-    margin-bottom: 1em;
-    display: inline-block;
-    &::after {
-      content: '';
-      display: block;
-      height: 2px;
-      background-color: variables.$slate-light;
-      width: 0;
-      transition: width 0.5s;
-    }
-  }
-
+@include container.container {
   .role {
     margin-bottom: 0.2em;
   }
 
   .introduction {
-    text-align: center;
+    text-align: left;
   }
 
   &:hover {
@@ -41,27 +24,19 @@
   }
 }
 
-@include queries.screen(lg) {
-  .container {
-    // align-items: flex-start;
-    margin: 0 auto;
-    max-width: 70%;
-    align-items: flex-start;
-
-    .section-title {
-      font-size: 2rem;
+@include container.container-query {
+  &.about {
+    .role {
+      font-size: 1.5rem;
     }
 
-    &.about {
-      .role {
-        font-size: 1.5rem;
-      }
-
-      .introduction {
-        font-size: 1.2rem;
-        text-align: left;
-        width: 100%;
-      }
+    .introduction {
+      font-size: 1.2rem;
+      width: 100%;
     }
   }
+}
+
+.jobs {
+  flex: 1 1 0;
 }

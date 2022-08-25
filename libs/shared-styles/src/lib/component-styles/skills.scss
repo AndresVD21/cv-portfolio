@@ -1,9 +1,16 @@
 @use '../variables';
 @use '../colors';
+@use '../queries';
+@use '../utilities-styles/section.scss';
+@use '../mixins/container.scss' as *;
+// @use '../mixins/portfolio-container.scss' as main;
+@use '../utilities-styles/feature-container.scss';
+
+@include container;
+@include container-query;
 
 .cv-portfolio-skills-container {
   background-color: variables.$blue-dark;
-  height: 100%;
 
   .working-technologies {
     max-width: 90%;
@@ -28,9 +35,16 @@
       }
     }
   }
+
   .skills {
-    padding: 1em;
-    max-width: 90%;
+    padding-top: 2em;
     margin: 0 auto;
+    flex: 1 1 0;
+  }
+}
+
+@include queries.screen(lg) {
+  .working-technologies {
+    width: 100%;
   }
 }

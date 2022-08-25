@@ -1,9 +1,21 @@
 @use '../queries';
+@use '../variables';
 
 .employ-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
+
+  .no-jobs-container {
+    padding: 1em;
+    border-radius: 8px;
+    background-color: variables.$sky-dark;
+    grid-column: 1/-1;
+
+    .no-jobs-text {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 @include queries.screen(lg) {
