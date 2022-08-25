@@ -10,6 +10,7 @@ import {
   faReact,
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
+import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
 import { Subject, takeUntil } from 'rxjs';
 import { SkillsService } from '../../services/skills.service';
 
@@ -25,7 +26,17 @@ export class SkillsComponent implements OnInit, OnDestroy {
   numberOfBars = 4;
 
   constructor(private skillsService: SkillsService, library: FaIconLibrary) {
-    library.addIcons(faAngular, faReact, faSass, faJs, faCss3, faHtml5, faGit);
+    library.addIcons(
+      faAngular,
+      faReact,
+      faSass,
+      faJs,
+      faCss3,
+      faHtml5,
+      faGit,
+      faWandSparkles,
+      faLanguage
+    );
   }
 
   ngOnInit(): void {

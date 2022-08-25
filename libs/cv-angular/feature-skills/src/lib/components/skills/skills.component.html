@@ -1,4 +1,4 @@
-<main class="cv-portfolio-skills-container">
+<main class="cv-portfolio-skills-container feature-container">
   <cv-portfolio-header></cv-portfolio-header>
   <section class="working-technologies">
     <h1 class="title">Technologies on my toolbox</h1>
@@ -18,11 +18,22 @@
       <fa-icon class="tech-icon git-orange" [icon]="['fab', 'git']"></fa-icon>
     </div>
   </section>
-  <section class="skills">
+  <section class="skills container">
+    <h2 class="section-title">
+      <fa-icon [icon]="['fas', 'wand-sparkles']"></fa-icon>
+      Skills
+    </h2>
     <cv-portfolio-skill
       *ngFor="let skill of skills"
       [skill]="skill"
       [numberOfBars]="numberOfBars"
     ></cv-portfolio-skill>
   </section>
+  <!-- <section class="container">
+    <h2 class="section-title">
+      <fa-icon [icon]="['fas', 'language']"></fa-icon>
+      Languages
+    </h2>
+  </section> -->
+  <cv-portfolio-footer></cv-portfolio-footer>
 </main>
