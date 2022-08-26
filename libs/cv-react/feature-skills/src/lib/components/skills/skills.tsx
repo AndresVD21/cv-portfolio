@@ -14,7 +14,7 @@ import { Skill } from './skill/skill';
 import { SkillModel } from '@cv-portfolio/data';
 import { useEffect, useState } from 'react';
 import { getSkillList } from '../../services/skills.service';
-import { faWandSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {}
@@ -28,7 +28,8 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
     faReact,
     faSass,
     faGit,
-    faWandSparkles
+    faWandSparkles,
+    faLanguage
   );
 
   const numberOfBars = 4;
@@ -46,7 +47,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
   };
   return (
     <>
-      <section className="working-technologies">
+      <section className="working-technologies container">
         <h1 className="title">Technologies on my toolbox</h1>
         <div className="technologies-container">
           <FontAwesomeIcon icon={faHtml5} className="tech-icon html-orange" />
@@ -58,20 +59,37 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
           <FontAwesomeIcon icon={faGit} className="tech-icon git-orange" />
         </div>
       </section>
-      <section className="skills container">
-        <h2 className="section-title">
-          <FontAwesomeIcon icon={faWandSparkles} />
-          <span> </span>
-          Skills
-        </h2>
-        {skills.map((skill) => (
-          <Skill
-            key={skill.skillId}
-            skill={skill}
-            numberOfBars={numberOfBars}
-          />
-        ))}
-      </section>
+      <div className="wrapper">
+        <section className="skills container">
+          <details>
+            <summary>
+              <h2 className="section-title">
+                <FontAwesomeIcon icon={faWandSparkles} />
+                <span> </span>
+                Skills
+              </h2>
+            </summary>
+            {skills.map((skill) => (
+              <Skill
+                key={skill.skillId}
+                skill={skill}
+                numberOfBars={numberOfBars}
+              />
+            ))}
+          </details>
+        </section>
+        <section className="container">
+          <details>
+            <summary>
+              <h2 className="section-title">
+                <FontAwesomeIcon icon={faLanguage} />
+                <span> </span>
+                Languages
+              </h2>
+            </summary>
+          </details>
+        </section>
+      </div>
     </>
   );
 };
