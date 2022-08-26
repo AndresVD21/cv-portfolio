@@ -10,9 +10,13 @@ export interface JobsProps {
 const Jobs: React.FC<JobsProps> = ({ jobs }) => {
   return (
     <div className="employ-container">
-      {jobs.map((job) => (
-        <CvReactJob key={job.roleName} job={job} />
-      ))}
+      {jobs.length > 0 &&
+        jobs.map((job) => <CvReactJob key={job.roleName} job={job} />)}
+      {jobs.length === 0 && (
+        <div className="no-jobs-container">
+          <span className="no-jobs-text">There are no jobs registered.</span>
+        </div>
+      )}
     </div>
   );
 };
