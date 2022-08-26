@@ -1,11 +1,13 @@
 @use '../variables';
 @use '../queries';
 @use '../utilities-styles/section.scss';
-// @use '../utilities-styles/feature-container.scss';
+@use '../utilities-styles/feature-container.scss';
 @use '../mixins/container.scss' as container;
+@use '../mixins/wrapper.scss' as *;
 
 .cv-portfolio-main-container {
   background-color: variables.$blue-dark;
+  @include wrapper;
 }
 
 @include container.container {
