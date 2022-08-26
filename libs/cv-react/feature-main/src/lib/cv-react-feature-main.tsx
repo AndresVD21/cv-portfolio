@@ -1,4 +1,4 @@
-import { Header } from '@cv-portfolio/shared/react-ui';
+import { Footer, Header } from '@cv-portfolio/shared/react-ui';
 import Main from '../components/main/main';
 
 import './cv-react-feature-main.scss';
@@ -23,6 +23,7 @@ export function CvReactFeatureMain(props: CvReactFeatureMainProps) {
         </div>
       </Header>
       <Main />
+      <Footer />
     </>
   );
 }

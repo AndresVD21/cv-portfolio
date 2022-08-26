@@ -1,5 +1,5 @@
 import './cv-react-feature-skills.scss';
-import { Header } from '@cv-portfolio/shared/react-ui';
+import { Footer, Header } from '@cv-portfolio/shared/react-ui';
 import { Skills } from './components/skills/skills';
 
 /* eslint-disable-next-line */
@@ -10,6 +10,7 @@ export function CvReactFeatureSkills(props: CvReactFeatureSkillsProps) {
     <main className="cv-portfolio-skills-container feature-container">
       <Header />
       <Skills />
+      <Footer />
     </main>
   );
 }
