@@ -18,7 +18,8 @@
                   "domain:cv-angular",
                   "domain:shared",
                   "domain:data",
-                  "domain:api"
+                  "domain:api",
+                  "domain:utils"
                 ]
               },
               {
@@ -27,7 +28,8 @@
                   "domain:cv-react",
                   "domain:shared",
                   "domain:data",
-                  "domain:api"
+                  "domain:api",
+                  "domain:utils"
                 ]
               },
               {
@@ -37,6 +39,10 @@
               {
                 "sourceTag": "domain:shared",
                 "onlyDependOnLibsWithTags": ["domain:shared"]
+              },
+              {
+                "sourceTag": "domain:utils",
+                "onlyDependOnLibsWithTags": ["domain:data"]
               }
             ]
           }

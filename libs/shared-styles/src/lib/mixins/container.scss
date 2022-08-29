@@ -5,7 +5,9 @@
     padding: 1em 2em;
     display: flex;
     flex-direction: column;
-    min-width: 90%;
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
 
     @content;
   }
@@ -16,6 +18,8 @@
     .container {
       margin: 0 auto;
       max-width: 70%;
+      text-align: left;
+      margin: 0 auto;
 
       @content;
     }

@@ -6,7 +6,7 @@ section {
     padding: 0.1em 0;
     margin-bottom: 1em;
     display: inline-block;
-    align-self: flex-start;
+    align-self: center;
     &::after {
       content: '';
       display: block;
@@ -25,7 +25,10 @@ section {
 }
 
 @include queries.screen(lg) {
-  .section-title {
-    font-size: 2rem;
+  section {
+    .section-title {
+      align-self: flex-start;
+      font-size: 2rem;
+    }
   }
 }

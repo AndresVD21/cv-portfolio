@@ -1,5 +1,6 @@
 @use '../variables';
 @use '../colors';
+@use '../queries';
 @use '../utilities-styles/section.scss';
 @use '../mixins/container.scss' as container;
 @use '../utilities-styles/feature-container.scss';
@@ -17,7 +18,8 @@
   .working-technologies {
     padding: 1em;
     border: 3px solid variables.$slate-light;
-    margin: 0 auto;
+    // margin: 0 auto;
+    min-width: 90%;
     .title {
       text-transform: uppercase;
       font-size: 2rem;
@@ -42,4 +44,12 @@
   }
 
   @include wrapper;
+}
+
+@include queries.screen(lg) {
+  .cv-portfolio-skills-container {
+    .working-technologies {
+      min-width: 70%;
+    }
+  }
 }
