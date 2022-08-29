@@ -11,11 +11,14 @@ import {
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
 import { Skill } from './skill/skill';
-import { SkillModel } from '@cv-portfolio/data';
+import { LanguageModel, SkillModel } from '@cv-portfolio/data';
 import { useEffect, useState } from 'react';
 import { getSkillList } from '../../services/skills.service';
 import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
 import { Space } from '@cv-portfolio/shared/react-ui';
+import { getLanguages } from '../../services/languages.service';
+import { Languages } from '../languages/languages';
+import { reorderLanguages } from '@cv-portfolio/utils';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {}
@@ -35,9 +38,11 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
 
   const numberOfBars = 4;
   const [skills, setSkills] = useState<SkillModel[]>([]);
+  const [languages, setLanguages] = useState<LanguageModel[]>([]);
 
   useEffect(() => {
     getSkills();
+    getLanguagesList();
   }, []);
 
   const getSkills = async () => {
@@ -46,6 +51,14 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
     } = await getSkillList();
     setSkills(data ? [...data] : []);
   };
+
+  const getLanguagesList = async () => {
+    const {
+      data: { data },
+    } = await getLanguages();
+    setLanguages(data ? [...reorderLanguages(data)] : []);
+  };
+
   return (
     <>
       <section className="working-technologies container">
@@ -80,7 +93,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
           </details>
         </section>
         <section className="container">
-          <details>
+          <details open>
             <summary>
               <h2 className="section-title cursor-pointer">
                 <FontAwesomeIcon icon={faLanguage} />
@@ -88,6 +101,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
                 Languages
               </h2>
             </summary>
+            <Languages languages={languages} />
           </details>
         </section>
       </div>
