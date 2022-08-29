@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SkillModel } from '@cv-portfolio/data';
+import { LanguageModel, SkillModel } from '@cv-portfolio/data';
+import { reorderLanguages } from '@cv-portfolio/utils';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
   faAngular,
@@ -10,8 +11,13 @@ import {
   faReact,
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
-import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLanguage,
+  faStar,
+  faWandSparkles,
+} from '@fortawesome/free-solid-svg-icons';
 import { Subject, takeUntil } from 'rxjs';
+import { LanguagesService } from '../../services/languages.service';
 import { SkillsService } from '../../services/skills.service';
 
 @Component({
@@ -22,10 +28,15 @@ import { SkillsService } from '../../services/skills.service';
 export class SkillsComponent implements OnInit, OnDestroy {
   private $destroy = new Subject<boolean>();
   skills: SkillModel[] = [];
+  languages: LanguageModel[] = [];
 
   numberOfBars = 4;
 
-  constructor(private skillsService: SkillsService, library: FaIconLibrary) {
+  constructor(
+    private skillsService: SkillsService,
+    private langsService: LanguagesService,
+    library: FaIconLibrary
+  ) {
     library.addIcons(
       faAngular,
       faReact,
@@ -35,12 +46,14 @@ export class SkillsComponent implements OnInit, OnDestroy {
       faHtml5,
       faGit,
       faWandSparkles,
-      faLanguage
+      faLanguage,
+      faStar
     );
   }
 
   ngOnInit(): void {
     this.getSkills();
+    this.getLanguages();
   }
 
   getSkills() {
@@ -49,6 +62,15 @@ export class SkillsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.$destroy))
       .subscribe(({ data }) => {
         this.skills = data ? [...data] : [];
+      });
+  }
+
+  getLanguages() {
+    this.langsService
+      .getLanguages()
+      .pipe(takeUntil(this.$destroy))
+      .subscribe(({ data }) => {
+        this.languages = reorderLanguages(data || []);
       });
   }
 

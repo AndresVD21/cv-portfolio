@@ -34,14 +34,17 @@
         ></cv-portfolio-skill>
       </details>
     </section>
-    <section class="container">
-      <details>
+    <section class="languages container">
+      <details open>
         <summary>
           <h2 class="section-title cursor-pointer">
             <fa-icon [icon]="['fas', 'language']"></fa-icon>
             Languages
           </h2>
         </summary>
+        <cv-portfolio-languages
+          [languages]="languages"
+        ></cv-portfolio-languages>
       </details>
     </section>
   </div>
