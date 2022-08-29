@@ -5,3 +5,5 @@ export * from './lib/skill';
 export * from './lib/skill-dto';
 export * from './lib/response-dto';
 export * from './lib/response';
+export * from './lib/language-model';
+export * from './lib/language-dto';
