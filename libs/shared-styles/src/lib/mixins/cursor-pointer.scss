@@ -1,0 +1,11 @@
+@mixin cursor-pointer {
+  .cursor-pointer {
+    cursor: pointer;
+  }
+}
+
+@mixin marker-cursor-pointer {
+  summary::marker {
+    cursor: pointer;
+  }
+}

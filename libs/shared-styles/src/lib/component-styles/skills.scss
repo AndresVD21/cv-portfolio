@@ -1,12 +1,15 @@
 @use '../variables';
 @use '../colors';
 @use '../utilities-styles/section.scss';
-@use '../mixins/container.scss' as *;
+@use '../mixins/container.scss' as container;
 @use '../utilities-styles/feature-container.scss';
 @use '../mixins/wrapper.scss' as *;
+@use '../mixins/cursor-pointer.scss' as cursor;
 
-@include container;
-@include container-query;
+@include container.container;
+@include container.container-query;
+@include cursor.cursor-pointer;
+@include cursor.marker-cursor-pointer;
 
 .cv-portfolio-skills-container {
   background-color: variables.$blue-dark;
