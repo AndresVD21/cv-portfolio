@@ -10,7 +10,7 @@ import Jobs from './jobs/jobs';
 import { useEffect, useState } from 'react';
 import { getJobHistory } from '../../services/jobs.service';
 import { JobModel } from '@cv-portfolio/data';
-import { Footer, Header } from '@cv-portfolio/shared/react-ui';
+import { Footer, Header, Space } from '@cv-portfolio/shared/react-ui';
 
 /* eslint-disable-next-line */
 export interface MainProps {}
@@ -48,6 +48,7 @@ export function Main(props: MainProps) {
         <section id="about-me" className="about container">
           <h2 className="section-title">
             <FontAwesomeIcon icon={faAddressCard} className="icon" />
+            <Space />
             About me
           </h2>
           <h3 className="role">Frontend Developer</h3>
@@ -61,6 +62,7 @@ export function Main(props: MainProps) {
         <section id="employment-history" className="container">
           <h2 className="section-title">
             <FontAwesomeIcon icon={faFolderOpen} className="icon" />
+            <Space />
             Jobs
           </h2>
           <Jobs jobs={jobs} />

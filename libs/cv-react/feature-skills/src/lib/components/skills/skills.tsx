@@ -15,6 +15,7 @@ import { SkillModel } from '@cv-portfolio/data';
 import { useEffect, useState } from 'react';
 import { getSkillList } from '../../services/skills.service';
 import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
+import { Space } from '@cv-portfolio/shared/react-ui';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {}
@@ -65,7 +66,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
             <summary>
               <h2 className="section-title">
                 <FontAwesomeIcon icon={faWandSparkles} />
-                <span> </span>
+                <Space />
                 Skills
               </h2>
             </summary>
@@ -83,7 +84,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
             <summary>
               <h2 className="section-title">
                 <FontAwesomeIcon icon={faLanguage} />
-                <span> </span>
+                <Space />
                 Languages
               </h2>
             </summary>
