@@ -64,7 +64,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
         <section className="skills container">
           <details>
             <summary>
-              <h2 className="section-title">
+              <h2 className="section-title cursor-pointer">
                 <FontAwesomeIcon icon={faWandSparkles} />
                 <Space />
                 Skills
@@ -82,7 +82,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
         <section className="container">
           <details>
             <summary>
-              <h2 className="section-title">
+              <h2 className="section-title cursor-pointer">
                 <FontAwesomeIcon icon={faLanguage} />
                 <Space />
                 Languages
