@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "api-next": "apps/api-next",
+    "api-next-e2e": "apps/api-next-e2e",
     "cv-angular": "apps/cv-angular",
     "cv-angular-e2e": "apps/cv-angular-e2e",
     "cv-angular-feature-main": "libs/cv-angular/feature-main",

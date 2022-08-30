@@ -55,6 +55,12 @@
         "style": "scss",
         "linter": "eslint"
       }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
     }
   },
   "defaultProject": "cv-angular"

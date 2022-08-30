@@ -43,6 +43,10 @@
               {
                 "sourceTag": "domain:utils",
                 "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:api-next",
+                "onlyDependOnLibsWithTags": ["domain:data"]
               }
             ]
           }
