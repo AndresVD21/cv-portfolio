@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {
@@ -9,7 +10,6 @@ const routes: Routes = [
   },
   {
     path: 'skills',
-    data: { animationState: 'skills' },
     loadChildren: () =>
       import('@cv-portfolio/cv-angular/feature-skills').then(
         (m) => m.CvAngularFeatureSkillsModule
@@ -17,7 +17,6 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    data: { animationState: 'home' },
     loadChildren: () =>
       import('@cv-portfolio/cv-angular/feature-main').then(
         (m) => m.CvAngularFeatureMainModule

@@ -1,5 +1,5 @@
 import { Job, JobDTO, ResponseDTO } from '@cv-portfolio/data';
-import { mapJobs } from './mappers/jobMapper';
+import { mapJobs } from '../../mappers/jobMapper';
 
 const jobs: Job[] = [
   new Job(

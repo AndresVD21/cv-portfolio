@@ -1,5 +1,5 @@
 import { ResponseDTO, SkillDTO, SkillModel } from '@cv-portfolio/data';
-import { mapSkills } from './mappers/skillMapper';
+import { mapSkills } from '../../mappers/skillMapper';
 
 const skills: SkillModel[] = [
   { skillId: 'html', skillName: 'HTML5', skillLevel: 90 },

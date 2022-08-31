@@ -1,5 +1,5 @@
 import { LanguageDTO, LanguageModel, ResponseDTO } from '@cv-portfolio/data';
-import { mapLanguages } from './mappers/langMapper';
+import { mapLanguages } from '../../mappers/langMapper';
 
 const languages: LanguageModel[] = [
   {
