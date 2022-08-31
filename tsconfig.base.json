@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cv-portfolio/app-config": ["libs/app-config/src/index.ts"],
       "@cv-portfolio/cv-angular/feature-main": [
         "libs/cv-angular/feature-main/src/index.ts"
       ],
