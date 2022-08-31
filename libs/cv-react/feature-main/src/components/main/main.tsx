@@ -7,15 +7,17 @@ import {
   faFolderOpen,
 } from '@fortawesome/free-solid-svg-icons';
 import Jobs from './jobs/jobs';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getJobHistory } from '../../services/jobs.service';
 import { JobModel } from '@cv-portfolio/data';
 import { Footer, Header, Space } from '@cv-portfolio/shared/react-ui';
 
 /* eslint-disable-next-line */
-export interface MainProps {}
+export interface MainProps {
+  apiUrl: string;
+}
 
-export function Main(props: MainProps) {
+export const Main: React.FC<MainProps> = ({ apiUrl }) => {
   library.add(faAddressCard, faFolderOpen, faFire);
   const [jobs, setJobs] = useState<JobModel[]>([]);
   useEffect(() => {
@@ -25,7 +27,7 @@ export function Main(props: MainProps) {
   const getHistory = async () => {
     const {
       data: { data },
-    } = await getJobHistory();
+    } = await getJobHistory(apiUrl);
     setJobs(data ? [...data] : []);
   };
 
@@ -71,6 +73,6 @@ export function Main(props: MainProps) {
       <Footer />
     </div>
   );
-}
+};
 
 export default Main;

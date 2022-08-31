@@ -15,15 +15,17 @@ import { LanguageModel, SkillModel } from '@cv-portfolio/data';
 import { useEffect, useState } from 'react';
 import { getSkillList } from '../../services/skills.service';
 import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
-import { Space } from '@cv-portfolio/shared/react-ui';
+import { Footer, Header, Space } from '@cv-portfolio/shared/react-ui';
 import { getLanguages } from '../../services/languages.service';
 import { Languages } from '../languages/languages';
 import { reorderLanguages } from '@cv-portfolio/utils';
 
 /* eslint-disable-next-line */
-export interface SkillsProps {}
+export interface SkillsProps {
+  apiUrl: string;
+}
 
-export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
+export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
   library.add(
     faHtml5,
     faJs,
@@ -48,19 +50,20 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
   const getSkills = async () => {
     const {
       data: { data },
-    } = await getSkillList();
+    } = await getSkillList(apiUrl);
     setSkills(data ? [...data] : []);
   };
 
   const getLanguagesList = async () => {
     const {
       data: { data },
-    } = await getLanguages();
+    } = await getLanguages(apiUrl);
     setLanguages(data ? [...reorderLanguages(data)] : []);
   };
 
   return (
-    <>
+    <main className="cv-portfolio-skills-container feature-container">
+      <Header />
       <section className="working-technologies container">
         <h1 className="title">Technologies on my toolbox</h1>
         <div className="technologies-container">
@@ -105,6 +108,7 @@ export const Skills: React.FC<SkillsProps> = (props: SkillsProps) => {
           </details>
         </section>
       </div>
-    </>
+      <Footer />
+    </main>
   );
 };

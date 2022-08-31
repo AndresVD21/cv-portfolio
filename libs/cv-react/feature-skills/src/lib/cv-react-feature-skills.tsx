@@ -1,18 +1,14 @@
 import './cv-react-feature-skills.scss';
-import { Footer, Header } from '@cv-portfolio/shared/react-ui';
 import { Skills } from './components/skills/skills';
+import React from 'react';
 
 /* eslint-disable-next-line */
-export interface CvReactFeatureSkillsProps {}
-
-export function CvReactFeatureSkills(props: CvReactFeatureSkillsProps) {
-  return (
-    <main className="cv-portfolio-skills-container feature-container">
-      <Header />
-      <Skills />
-      <Footer />
-    </main>
-  );
+export interface CvReactFeatureSkillsProps {
+  apiUrl: string;
 }
 
-export default CvReactFeatureSkills;
+export const CvReactFeatureSkills: React.FC<CvReactFeatureSkillsProps> = ({
+  apiUrl,
+}) => {
+  return <Skills apiUrl={apiUrl} />;
+};
