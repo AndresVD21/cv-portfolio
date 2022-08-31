@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { APP_CONFIG } from '@cv-portfolio/app-config';
 import {
   LanguageDTO,
   LanguageModel,
@@ -12,9 +13,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LanguagesService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    @Inject(APP_CONFIG) private appConfig: any,
+    private httpClient: HttpClient
+  ) {}
 
   getLanguages(): Observable<ResponseModel<LanguageModel[]>> {
-    return this.httpClient.get<ResponseDTO<LanguageDTO[]>>('/api/langs');
+    return this.httpClient.get<ResponseDTO<LanguageDTO[]>>(
+      `${this.appConfig.apiUrl}/api/langs`
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   JobDTO,
@@ -7,14 +7,20 @@ import {
   ResponseModel,
 } from '@cv-portfolio/data';
 import { Observable } from 'rxjs';
+import { APP_CONFIG } from '@cv-portfolio/app-config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobsService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    @Inject(APP_CONFIG) private appConfig: any,
+    private httpClient: HttpClient
+  ) {}
 
   getJobHistory(): Observable<ResponseModel<JobModel[]>> {
-    return this.httpClient.get<ResponseDTO<JobDTO[]>>('/api/job-history');
+    return this.httpClient.get<ResponseDTO<JobDTO[]>>(
+      `${this.appConfig.apiUrl}/api/job-history`
+    );
   }
 }
