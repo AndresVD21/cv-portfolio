@@ -7,7 +7,7 @@ import {
   faFolderOpen,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
-import { Subject, takeUntil } from 'rxjs';
+import { finalize, Subject, takeUntil } from 'rxjs';
 import { JobsService } from '../../services/jobs.service';
 
 @Component({
@@ -19,6 +19,8 @@ export class MainComponent implements OnInit, OnDestroy {
   private $destroy = new Subject<boolean>();
 
   jobs: JobModel[] = [];
+  isLoading = false;
+  loadingMessage = '';
 
   constructor(private jobsService: JobsService, library: FaIconLibrary) {
     library.addIcons(faAddressCard, faFolderOpen, faFire, faAngular);
@@ -29,9 +31,16 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   getJobsHistory() {
+    this.isLoading = true;
+    this.loadingMessage = 'Loading jobs history...';
     this.jobsService
       .getJobHistory()
-      .pipe(takeUntil(this.$destroy))
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        }),
+        takeUntil(this.$destroy)
+      )
       .subscribe(({ data }) => {
         this.jobs = data ? [...data] : [];
       });

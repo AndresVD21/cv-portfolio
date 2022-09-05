@@ -16,7 +16,7 @@ import {
   faStar,
   faWandSparkles,
 } from '@fortawesome/free-solid-svg-icons';
-import { Subject, takeUntil } from 'rxjs';
+import { finalize, Subject, takeUntil } from 'rxjs';
 import { LanguagesService } from '../../services/languages.service';
 import { SkillsService } from '../../services/skills.service';
 
@@ -31,6 +31,16 @@ export class SkillsComponent implements OnInit, OnDestroy {
   languages: LanguageModel[] = [];
 
   numberOfBars = 4;
+
+  isLoading = {
+    skills: false,
+    langs: false,
+  };
+
+  loadingMessage = {
+    skills: 'Loading skills...',
+    langs: 'Loading languages...',
+  };
 
   constructor(
     private skillsService: SkillsService,
@@ -57,18 +67,26 @@ export class SkillsComponent implements OnInit, OnDestroy {
   }
 
   getSkills() {
+    this.isLoading.skills = true;
     this.skillsService
       .getSkills()
-      .pipe(takeUntil(this.$destroy))
+      .pipe(
+        finalize(() => (this.isLoading.skills = false)),
+        takeUntil(this.$destroy)
+      )
       .subscribe(({ data }) => {
         this.skills = data ? [...data] : [];
       });
   }
 
   getLanguages() {
+    this.isLoading.langs = true;
     this.langsService
       .getLanguages()
-      .pipe(takeUntil(this.$destroy))
+      .pipe(
+        finalize(() => (this.isLoading.langs = false)),
+        takeUntil(this.$destroy)
+      )
       .subscribe(({ data }) => {
         this.languages = reorderLanguages(data || []);
       });

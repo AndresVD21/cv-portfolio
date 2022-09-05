@@ -19,7 +19,11 @@
         <fa-icon [icon]="['fas', 'folder-open']"></fa-icon>
         Jobs
       </h2>
-      <cv-portfolio-jobs [jobs]="jobs"></cv-portfolio-jobs>
+      <cv-portfolio-jobs *ngIf="!isLoading" [jobs]="jobs"></cv-portfolio-jobs>
+      <cv-portfolio-loading
+        *ngIf="isLoading"
+        [loadingMessage]="loadingMessage"
+      ></cv-portfolio-loading>
     </section>
   </div>
   <cv-portfolio-footer></cv-portfolio-footer>

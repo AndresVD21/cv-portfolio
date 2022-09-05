@@ -27,11 +27,20 @@
             Skills
           </h2>
         </summary>
-        <cv-portfolio-skill
-          *ngFor="let skill of skills"
-          [skill]="skill"
-          [numberOfBars]="numberOfBars"
-        ></cv-portfolio-skill>
+        <ng-container *ngIf="!isLoading.skills; else loadingSkills">
+          <ng-container *ngIf="skills.length > 0; else noData">
+            <cv-portfolio-skill
+              *ngFor="let skill of skills"
+              [skill]="skill"
+              [numberOfBars]="numberOfBars"
+            ></cv-portfolio-skill>
+          </ng-container>
+          <ng-template #noData>
+            <cv-portfolio-no-data
+              noDataText="There are no skills registered."
+            ></cv-portfolio-no-data>
+          </ng-template>
+        </ng-container>
       </details>
     </section>
     <section class="languages container">
@@ -42,11 +51,30 @@
             Languages
           </h2>
         </summary>
-        <cv-portfolio-languages
-          [languages]="languages"
-        ></cv-portfolio-languages>
+        <ng-container *ngIf="!isLoading.langs; else loadingLangs">
+          <ng-container *ngIf="languages.length > 0; else noDataLangs">
+            <cv-portfolio-languages
+              [languages]="languages"
+            ></cv-portfolio-languages>
+          </ng-container>
+          <ng-template #noDataLangs>
+            <cv-portfolio-no-data
+              noDataText="There are no languages registered."
+            ></cv-portfolio-no-data>
+          </ng-template>
+        </ng-container>
       </details>
     </section>
   </div>
   <cv-portfolio-footer></cv-portfolio-footer>
 </main>
+<ng-template #loadingSkills>
+  <cv-portfolio-loading
+    [loadingMessage]="loadingMessage.skills"
+  ></cv-portfolio-loading>
+</ng-template>
+<ng-template #loadingLangs>
+  <cv-portfolio-loading
+    [loadingMessage]="loadingMessage.langs"
+  ></cv-portfolio-loading>
+</ng-template>
