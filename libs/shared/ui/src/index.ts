@@ -6,4 +6,6 @@ export * from './lib/angular-components/nav/nav.component';
 
 export * from './lib/angular-components/header/header.component';
 export * from './lib/angular-components/footer/footer.component';
+export * from './lib/angular-components/loading/loading.component';
+export * from './lib/angular-components/no-data/no-data.component';
 export * from './lib/pipes/fill.pipe';
