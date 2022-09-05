@@ -47,9 +47,6 @@
       "@cv-portfolio/shared-styles": ["libs/shared-styles/src/index.ts"],
       "@cv-portfolio/shared/react-ui": ["libs/shared/react-ui/src/index.ts"],
       "@cv-portfolio/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@cv-portfolio/shared/util-formating": [
-        "libs/shared/util-formating/src/index.ts"
-      ],
       "@cv-portfolio/utils": ["libs/utils/src/index.ts"]
     }
   },

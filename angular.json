@@ -18,7 +18,6 @@
     "shared-react-ui": "libs/shared/react-ui",
     "shared-styles": "libs/shared-styles",
     "shared-ui": "libs/shared/ui",
-    "shared-util-formating": "libs/shared/util-formating",
     "utils": "libs/utils"
   }
 }
