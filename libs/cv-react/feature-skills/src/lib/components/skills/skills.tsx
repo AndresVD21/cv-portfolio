@@ -15,7 +15,13 @@ import { LanguageModel, SkillModel } from '@cv-portfolio/data';
 import { useEffect, useState } from 'react';
 import { getSkillList } from '../../services/skills.service';
 import { faLanguage, faWandSparkles } from '@fortawesome/free-solid-svg-icons';
-import { Footer, Header, Space } from '@cv-portfolio/shared/react-ui';
+import {
+  Footer,
+  Header,
+  Loading,
+  NoData,
+  Space,
+} from '@cv-portfolio/shared/react-ui';
 import { getLanguages } from '../../services/languages.service';
 import { Languages } from '../languages/languages';
 import { reorderLanguages } from '@cv-portfolio/utils';
@@ -41,6 +47,12 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
   const numberOfBars = 4;
   const [skills, setSkills] = useState<SkillModel[]>([]);
   const [languages, setLanguages] = useState<LanguageModel[]>([]);
+  const [loadingSkills, setLoadingSkills] = useState(false);
+  const [loadingLangs, setLoadingLangs] = useState(false);
+  const loadingMessage = {
+    skills: 'Loading skills...',
+    langs: 'Loading languages...',
+  };
 
   useEffect(() => {
     getSkills();
@@ -48,16 +60,20 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
   }, []);
 
   const getSkills = async () => {
+    setLoadingSkills(true);
     const {
       data: { data },
     } = await getSkillList(apiUrl);
+    setLoadingSkills(false);
     setSkills(data ? [...data] : []);
   };
 
   const getLanguagesList = async () => {
+    setLoadingLangs(true);
     const {
       data: { data },
     } = await getLanguages(apiUrl);
+    setLoadingLangs(false);
     setLanguages(data ? [...reorderLanguages(data)] : []);
   };
 
@@ -86,13 +102,19 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
                 Skills
               </h2>
             </summary>
-            {skills.map((skill) => (
-              <Skill
-                key={skill.skillId}
-                skill={skill}
-                numberOfBars={numberOfBars}
-              />
-            ))}
+            {loadingSkills ? (
+              <Loading loadingMessage={loadingMessage.skills} />
+            ) : skills.length > 0 ? (
+              skills.map((skill) => (
+                <Skill
+                  key={skill.skillId}
+                  skill={skill}
+                  numberOfBars={numberOfBars}
+                />
+              ))
+            ) : (
+              <NoData noDataText="There are no skills registered." />
+            )}
           </details>
         </section>
         <section className="container">
@@ -104,7 +126,13 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
                 Languages
               </h2>
             </summary>
-            <Languages languages={languages} />
+            {loadingLangs ? (
+              <Loading loadingMessage={loadingMessage.langs} />
+            ) : languages.length > 0 ? (
+              <Languages languages={languages} />
+            ) : (
+              <NoData noDataText="There are no languages registered." />
+            )}
           </details>
         </section>
       </div>

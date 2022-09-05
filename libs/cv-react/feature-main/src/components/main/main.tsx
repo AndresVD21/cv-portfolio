@@ -10,7 +10,13 @@ import Jobs from './jobs/jobs';
 import React, { useEffect, useState } from 'react';
 import { getJobHistory } from '../../services/jobs.service';
 import { JobModel } from '@cv-portfolio/data';
-import { Footer, Header, Space } from '@cv-portfolio/shared/react-ui';
+import {
+  Footer,
+  Header,
+  Loading,
+  NoData,
+  Space,
+} from '@cv-portfolio/shared/react-ui';
 
 /* eslint-disable-next-line */
 export interface MainProps {
@@ -20,14 +26,18 @@ export interface MainProps {
 export const Main: React.FC<MainProps> = ({ apiUrl }) => {
   library.add(faAddressCard, faFolderOpen, faFire);
   const [jobs, setJobs] = useState<JobModel[]>([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     getHistory();
   }, []);
 
   const getHistory = async () => {
+    setLoading(true);
     const {
       data: { data },
     } = await getJobHistory(apiUrl);
+    setLoading(false);
     setJobs(data ? [...data] : []);
   };
 
@@ -67,7 +77,13 @@ export const Main: React.FC<MainProps> = ({ apiUrl }) => {
             <Space />
             Jobs
           </h2>
-          <Jobs jobs={jobs} />
+          {loading ? (
+            <Loading loadingMessage="Loading jobs history..." />
+          ) : jobs.length > 0 ? (
+            <Jobs jobs={jobs} />
+          ) : (
+            <NoData noDataText="There are no jobs registered." />
+          )}
         </section>
       </div>
       <Footer />
