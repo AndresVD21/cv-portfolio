@@ -69,7 +69,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
   getSkills() {
     this.isLoading.skills = true;
     this.skillsService
-      .getSkills()
+      .getSkillsList()
       .pipe(
         finalize(() => (this.isLoading.skills = false)),
         takeUntil(this.$destroy)

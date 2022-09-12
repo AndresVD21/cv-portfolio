@@ -7,6 +7,7 @@ import {
   ResponseDTO,
   ResponseModel,
 } from '@cv-portfolio/data';
+import { getLanguages } from '@cv-portfolio/data-access';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,8 +20,9 @@ export class LanguagesService {
   ) {}
 
   getLanguages(): Observable<ResponseModel<LanguageModel[]>> {
-    return this.httpClient.get<ResponseDTO<LanguageDTO[]>>(
-      `${this.appConfig.apiUrl}/api/langs`
-    );
+    // return this.httpClient.get<ResponseDTO<LanguageDTO[]>>(
+    //   `${this.appConfig.apiUrl}/api/langs`
+    // );
+    return getLanguages(this.appConfig.functionsUrl);
   }
 }

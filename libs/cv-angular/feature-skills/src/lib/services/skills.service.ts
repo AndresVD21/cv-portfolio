@@ -7,6 +7,7 @@ import {
   SkillModel,
   SkillDTO,
 } from '@cv-portfolio/data';
+import { getSkills } from '@cv-portfolio/data-access';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,9 +19,10 @@ export class SkillsService {
     private httpClient: HttpClient
   ) {}
 
-  getSkills(): Observable<ResponseModel<SkillModel[]>> {
-    return this.httpClient.get<ResponseDTO<SkillDTO[]>>(
-      `${this.appConfig.apiUrl}/api/skills`
-    );
+  getSkillsList(): Observable<ResponseModel<SkillModel[]>> {
+    // return this.httpClient.get<ResponseDTO<SkillDTO[]>>(
+    //   `${this.appConfig.apiUrl}/api/skills`
+    // );
+    return getSkills(this.appConfig.functionsUrl);
   }
 }
