@@ -11,11 +11,21 @@ export function App() {
       <Routes>
         <Route
           path="/"
-          element={<CvReactFeatureMain apiUrl={environment.apiUrl} />}
+          element={
+            <CvReactFeatureMain
+              apiUrl={environment.apiUrl}
+              functionsUrl={environment.functionsUrl}
+            />
+          }
         />
         <Route
           path="skills"
-          element={<CvReactFeatureSkills apiUrl={environment.apiUrl} />}
+          element={
+            <CvReactFeatureSkills
+              apiUrl={environment.apiUrl}
+              functionsUrl={environment.functionsUrl}
+            />
+          }
         />
       </Routes>
     </div>
