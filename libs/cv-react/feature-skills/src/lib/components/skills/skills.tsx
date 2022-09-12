@@ -25,6 +25,7 @@ import {
 import { getLanguages } from '../../services/languages.service';
 import { Languages } from '../languages/languages';
 import { reorderLanguages } from '@cv-portfolio/utils';
+import { finalize, Subject, takeUntil } from 'rxjs';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
@@ -33,6 +34,8 @@ export interface SkillsProps {
 }
 
 export const Skills: React.FC<SkillsProps> = ({ apiUrl, functionsUrl }) => {
+  const $destroy = new Subject<boolean>();
+
   library.add(
     faHtml5,
     faJs,
@@ -58,20 +61,35 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl, functionsUrl }) => {
   useEffect(() => {
     getSkills();
     getLanguagesList();
+
+    return () => {
+      $destroy.next(true);
+      $destroy.unsubscribe();
+    };
   }, []);
 
-  const getSkills = async () => {
+  const getSkills = () => {
     setLoadingSkills(true);
-    const { data } = await getSkillList(functionsUrl);
-    setLoadingSkills(false);
-    setSkills(data ? [...data] : []);
+    getSkillList(functionsUrl)
+      .pipe(
+        finalize(() => setLoadingSkills(false)),
+        takeUntil($destroy)
+      )
+      .subscribe(({ data }) => {
+        setSkills(data ? [...data] : []);
+      });
   };
 
   const getLanguagesList = async () => {
     setLoadingLangs(true);
-    const { data } = await getLanguages(functionsUrl);
-    setLoadingLangs(false);
-    setLanguages(data ? [...reorderLanguages(data)] : []);
+    getLanguages(functionsUrl)
+      .pipe(
+        finalize(() => setLoadingLangs(false)),
+        takeUntil($destroy)
+      )
+      .subscribe(({ data }) => {
+        setLanguages(data ? [...reorderLanguages(data)] : []);
+      });
   };
 
   return (
