@@ -21,9 +21,10 @@ import {
 /* eslint-disable-next-line */
 export interface MainProps {
   apiUrl: string;
+  functionsUrl: string;
 }
 
-export const Main: React.FC<MainProps> = ({ apiUrl }) => {
+export const Main: React.FC<MainProps> = ({ apiUrl, functionsUrl }) => {
   library.add(faAddressCard, faFolderOpen, faFire);
   const [jobs, setJobs] = useState<JobModel[]>([]);
   const [loading, setLoading] = useState(false);
@@ -34,9 +35,7 @@ export const Main: React.FC<MainProps> = ({ apiUrl }) => {
 
   const getHistory = async () => {
     setLoading(true);
-    const {
-      data: { data },
-    } = await getJobHistory(apiUrl);
+    const { data } = await getJobHistory(functionsUrl);
     setLoading(false);
     setJobs(data ? [...data] : []);
   };

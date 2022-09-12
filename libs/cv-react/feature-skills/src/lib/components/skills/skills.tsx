@@ -29,9 +29,10 @@ import { reorderLanguages } from '@cv-portfolio/utils';
 /* eslint-disable-next-line */
 export interface SkillsProps {
   apiUrl: string;
+  functionsUrl: string;
 }
 
-export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
+export const Skills: React.FC<SkillsProps> = ({ apiUrl, functionsUrl }) => {
   library.add(
     faHtml5,
     faJs,
@@ -61,18 +62,14 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
 
   const getSkills = async () => {
     setLoadingSkills(true);
-    const {
-      data: { data },
-    } = await getSkillList(apiUrl);
+    const { data } = await getSkillList(functionsUrl);
     setLoadingSkills(false);
     setSkills(data ? [...data] : []);
   };
 
   const getLanguagesList = async () => {
     setLoadingLangs(true);
-    const {
-      data: { data },
-    } = await getLanguages(apiUrl);
+    const { data } = await getLanguages(functionsUrl);
     setLoadingLangs(false);
     setLanguages(data ? [...reorderLanguages(data)] : []);
   };
