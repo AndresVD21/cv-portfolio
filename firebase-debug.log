@@ -1,0 +1,68 @@
+[debug] [2022-09-12T17:49:42.724Z] ----------------------------------------------------------------------
+[debug] [2022-09-12T17:49:42.725Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --config ./firebase.json
+[debug] [2022-09-12T17:49:42.726Z] CLI Version:   11.8.0
+[debug] [2022-09-12T17:49:42.726Z] Platform:      darwin
+[debug] [2022-09-12T17:49:42.726Z] Node Version:  v16.17.0
+[debug] [2022-09-12T17:49:42.728Z] Time:          Mon Sep 12 2022 12:49:42 GMT-0500 (Colombia Standard Time)
+[debug] [2022-09-12T17:49:42.728Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-12T17:49:42.778Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-12T17:49:42.779Z] > authorizing via signed-in user (andresvd21@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-09-12T17:49:42.799Z] [hub] writing locator at /var/folders/7j/srl7cl2s51z84q5_2vx_5mh00000gq/T/hub-cv-portfolio-3fbc7.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-09-12T17:49:42.820Z] defaultcredentials: writing to file /Users/andres.valencia/.config/firebase/andresvd21_gmail_com_application_default_credentials.json
+[debug] [2022-09-12T17:49:42.828Z] Setting GAC to /Users/andres.valencia/.config/firebase/andresvd21_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/andres.valencia/.config/firebase/andresvd21_gmail_com_application_default_credentials.json"}}
+[debug] [2022-09-12T17:49:42.831Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cv-portfolio-3fbc7/adminSdkConfig [none]
+[debug] [2022-09-12T17:49:43.525Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cv-portfolio-3fbc7/adminSdkConfig 200
+[debug] [2022-09-12T17:49:43.526Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cv-portfolio-3fbc7/adminSdkConfig {"projectId":"cv-portfolio-3fbc7","storageBucket":"cv-portfolio-3fbc7.appspot.com","locationId":"us-central"}
+[debug] [2022-09-12T17:49:44.345Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-12T17:49:44.345Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-12T17:49:44.345Z] Starting Emulator UI with command {"binary":"node","args":["/Users/andres.valencia/.cache/firebase/emulators/ui-v1.9.0/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/andres.valencia/.cache/firebase/emulators/ui-v1.9.0/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-12T17:49:44.484Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "/Users/andres.valencia/Documents/Development/personal/cv-portfolio/dist/apps/firebase" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/andres.valencia/Documents/Development/personal/cv-portfolio/dist/apps/firebase\" for Cloud Functions..."}}
+[debug] [2022-09-12T17:49:44.613Z] Validating nodejs source
+[debug] [2022-09-12T17:49:45.284Z] checkFunctionsSDKVersion encountered error:Invalid Version:  {}
+[debug] [2022-09-12T17:49:45.286Z] > [functions] package.json contents: {
+  "name": "@cv-portfolio/firebase",
+  "description": "Firebase functions package",
+  "scripts": {
+    "build": "cd ../../ && nx run firebase:build --with-deps",
+    "serve": "npm run build && firebase emulators:start --only functions --config firebase.json",
+    "deploy": "firebase deploy --only functions --config firebase.json"
+  },
+  "main": "src/main.js",
+  "typings": "./src/main.d.ts",
+  "dependencies": {},
+  "peerDependencies": {
+    "firebase-functions": "^3.18.0",
+    "firebase-admin": "^10.0.2",
+    "tslib": "^2.3.0"
+  }
+}
+[debug] [2022-09-12T17:49:45.286Z] Building nodejs source
+[debug] [2022-09-12T17:49:45.286Z] Analyzing nodejs backend spec
+[debug] [2022-09-12T17:49:46.415Z] Could not parse firebase-functions version '' into semver. Falling back to parseTriggers.
+[info] ✔  functions: Loaded functions definitions from source: getSkills, getLanguages, getJobs. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getSkills, getLanguages, getJobs."}}
+[info] ✔  functions[us-central1-getSkills]: http function initialized (http://localhost:5001/cv-portfolio-3fbc7/us-central1/getSkills). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/cv-portfolio-3fbc7/us-central1/getSkills)."}}
+[info] ✔  functions[us-central1-getLanguages]: http function initialized (http://localhost:5001/cv-portfolio-3fbc7/us-central1/getLanguages). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/cv-portfolio-3fbc7/us-central1/getLanguages)."}}
+[info] ✔  functions[us-central1-getJobs]: http function initialized (http://localhost:5001/cv-portfolio-3fbc7/us-central1/getJobs). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/cv-portfolio-3fbc7/us-central1/getJobs)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

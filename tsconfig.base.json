@@ -32,6 +32,7 @@
         "libs/cv-react/feature-skills/src/index.ts"
       ],
       "@cv-portfolio/data": ["libs/data/src/index.ts"],
+      "@cv-portfolio/data-access": ["libs/data-access/src/index.ts"],
       "@cv-portfolio/myapp/feature-about": [
         "libs/myapp/feature-about/src/index.ts"
       ],

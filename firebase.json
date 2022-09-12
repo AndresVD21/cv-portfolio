@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "predeploy": ["npx nx run firebase:build", "npx nx run firebase:lint"],
+    "source": "dist/apps/firebase",
+    "runtime": "nodejs16"
+  }
+}
