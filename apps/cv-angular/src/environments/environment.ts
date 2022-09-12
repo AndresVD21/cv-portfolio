@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: '',
+  functionsUrl: 'http://localhost:5001/cv-portfolio-3fbc7/us-central1',
 };
 
 /*
