@@ -42,6 +42,7 @@ export const Main: React.FC<MainProps> = ({ apiUrl, functionsUrl }) => {
   }, []);
 
   const getHistory = () => {
+    setLoading(true);
     getJobHistory(functionsUrl)
       .pipe(
         finalize(() => setLoading(false)),
