@@ -1,105 +1,73 @@
+# Curriculum Vitae/Portfolio - Andres Valencia
 
+This project is all about personal learning. Here I'm improving already acquired skills like **Angular, HTML, CSS, SCSS and Javascript** and beginning to know some other interesting tools and frameworks such as **React.js, NX, Firebase and Express**.
 
-# CvPortfolio
+Let's get into what we have here:
 
-This project was generated using [Nx](https://nx.dev).
+## Technologies
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+---
 
-🔎 **Smart, Fast and Extensible Build System**
+### **Frontend**
 
-## Quick Start & Documentation
+We have two projects serving the frontend of the curriculum, they look pretty much similar with some minor differences. This was to understand that with the concepts we can build an app no matter the technology.
 
-[Nx Documentation](https://nx.dev/angular)
+<p><img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/angularjs/angularjs-original.svg" alt="Angular" width="100">
+<img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg" alt="React" width="100"></p>
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+---
 
-[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
+### **Backend**
 
-## Adding capabilities to your workspace
+Despite I'm not a fullstack or backend developer I know the importance to understand the other side of this world. With that said to test the connection between frontend and backend in local we have an Express app and to make use of Vercel I've created a little Next.js app to serve the endpoints.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+<p><img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/express/express-original.svg" alt="Express" width="100">
+<img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nextjs/nextjs-original.svg" alt="Next.js" width="100"></p>
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+Also I wanted to learn about the **Firebase** and how it provides the Backend as a Service solution (Still under development).
 
-Below are our core plugins:
+<img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/firebase/firebase-plain.svg" alt="Firebase" width="100">
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+---
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+### **Project Structure**
 
-## Generate an application
+This project was generated using [Nx](https://nx.dev). 🔎 **Smart, Fast and Extensible Build System**
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+<p><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="100"></p>
 
-> You can use any of the plugins above to generate applications as well.
+---
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+## Serving the Project
 
-## Generate a library
+To serve the **Angular** and **React** apps (set --port if you want to see both project at the same time):
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+```cmd
+nx serve cv-angular --port={port}
+```
 
-> You can also use any of the plugins above to generate libraries as well.
+```cmd
+nx serve cv-react --port={port}
+```
 
-Libraries are shareable across libraries and applications. They can be imported from `@cv-portfolio/mylib`.
+To serve the **Express** api run:
 
-## Development server
+```cmd
+nx serve api
+```
 
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+**Still in development**
 
-## Code scaffolding
+To serve firebase functions locally run:
 
-Run `ng g component my-component --project=my-app` to generate a new component.
+```cmd
+nx run firebase:serve
+```
 
-## Build
+## See it working
 
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The project is deployed in **Vercel** using Next.js to retrieve the data:
 
-## Running unit tests
+[CV Portfolio - Angular](cv-portfolio-angular.vercel.app)
 
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+[CV Portfolio - React](cv-portfolio-react.vercel.app)
