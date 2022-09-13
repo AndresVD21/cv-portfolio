@@ -1,0 +1,80 @@
+<main class="cv-portfolio-skills-container feature-container">
+  <cv-portfolio-header></cv-portfolio-header>
+  <section class="working-technologies container">
+    <h1 class="title">Technologies on my toolbox</h1>
+    <div class="technologies-container">
+      <fa-icon
+        class="tech-icon html-orange"
+        [icon]="['fab', 'html5']"
+      ></fa-icon>
+      <fa-icon class="tech-icon js-yellow" [icon]="['fab', 'js']"></fa-icon>
+      <fa-icon class="tech-icon css-blue" [icon]="['fab', 'css3']"></fa-icon>
+      <fa-icon
+        class="tech-icon angular-red"
+        [icon]="['fab', 'angular']"
+      ></fa-icon>
+      <fa-icon class="tech-icon react-blue" [icon]="['fab', 'react']"></fa-icon>
+      <fa-icon class="tech-icon rose" [icon]="['fab', 'sass']"></fa-icon>
+      <fa-icon class="tech-icon git-orange" [icon]="['fab', 'git']"></fa-icon>
+    </div>
+  </section>
+  <div class="wrapper">
+    <section class="skills container">
+      <details>
+        <summary>
+          <h2 class="section-title cursor-pointer">
+            <fa-icon [icon]="['fas', 'wand-sparkles']"></fa-icon>
+            Skills
+          </h2>
+        </summary>
+        <ng-container *ngIf="!isLoading.skills; else loadingSkills">
+          <ng-container *ngIf="skills.length > 0; else noData">
+            <cv-portfolio-skill
+              *ngFor="let skill of skills"
+              [skill]="skill"
+              [numberOfBars]="numberOfBars"
+            ></cv-portfolio-skill>
+          </ng-container>
+          <ng-template #noData>
+            <cv-portfolio-no-data
+              noDataText="There are no skills registered."
+            ></cv-portfolio-no-data>
+          </ng-template>
+        </ng-container>
+      </details>
+    </section>
+    <section class="languages container">
+      <details open>
+        <summary>
+          <h2 class="section-title cursor-pointer">
+            <fa-icon [icon]="['fas', 'language']"></fa-icon>
+            Languages
+          </h2>
+        </summary>
+        <ng-container *ngIf="!isLoading.langs; else loadingLangs">
+          <ng-container *ngIf="languages.length > 0; else noDataLangs">
+            <cv-portfolio-languages
+              [languages]="languages"
+            ></cv-portfolio-languages>
+          </ng-container>
+          <ng-template #noDataLangs>
+            <cv-portfolio-no-data
+              noDataText="There are no languages registered."
+            ></cv-portfolio-no-data>
+          </ng-template>
+        </ng-container>
+      </details>
+    </section>
+  </div>
+  <cv-portfolio-footer></cv-portfolio-footer>
+</main>
+<ng-template #loadingSkills>
+  <cv-portfolio-loading
+    [loadingMessage]="loadingMessage.skills"
+  ></cv-portfolio-loading>
+</ng-template>
+<ng-template #loadingLangs>
+  <cv-portfolio-loading
+    [loadingMessage]="loadingMessage.langs"
+  ></cv-portfolio-loading>
+</ng-template>

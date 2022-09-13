@@ -1,0 +1,23 @@
+// @use '../../../../../shared-styles/src/lib/component-styles/header-wrapper.scss';
+// @import '../../../../../shared-styles/src/lib/component-styles/header-wrapper.scss';
+@use '../../../../../shared-styles/src/lib/variables';
+@use '../../../../../shared-styles/src/lib/queries';
+
+.cv-header {
+  background: linear-gradient(
+      to bottom,
+      transparent 10%,
+      variables.$blue-dark 90%
+    ),
+    url('../../../../../shared/assets/images/yourname.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3em 2em;
+  color: variables.$slate-light;
+}
+
+@include queries.screen(lg) {
+  .cv-header {
+    padding: 3em 6em;
+  }
+}

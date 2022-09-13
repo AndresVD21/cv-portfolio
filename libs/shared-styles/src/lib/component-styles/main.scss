@@ -1,0 +1,45 @@
+@use '../variables';
+@use '../queries';
+@use '../utilities-styles/section.scss';
+@use '../utilities-styles/feature-container.scss';
+@use '../mixins/container.scss' as container;
+@use '../mixins/wrapper.scss' as *;
+
+.cv-portfolio-main-container {
+  background-color: variables.$blue-dark;
+  @include wrapper;
+}
+
+@include container.container {
+  .role {
+    margin-bottom: 0.2em;
+  }
+
+  .introduction {
+    text-align: center;
+  }
+
+  &:hover {
+    .section-title::after {
+      width: 100%;
+    }
+  }
+}
+
+@include container.container-query {
+  &.about {
+    .role {
+      font-size: 1.5rem;
+    }
+
+    .introduction {
+      font-size: 1.2rem;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+.jobs {
+  flex: 1 1 0;
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cv-react/feature-skills/src",
+  "projectType": "library",
+  "tags": ["domain:cv-react"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/cv-react/feature-skills/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cv-react/feature-skills"],
+      "options": {
+        "jestConfig": "libs/cv-react/feature-skills/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

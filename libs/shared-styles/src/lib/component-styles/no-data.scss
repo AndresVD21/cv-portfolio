@@ -1,0 +1,12 @@
+@use '../variables';
+
+.no-data-container {
+  padding: 1em;
+  border-radius: 8px;
+  background-color: variables.$sky-dark;
+  grid-column: 1/-1;
+
+  .no-data-text {
+    font-size: 1.2rem;
+  }
+}

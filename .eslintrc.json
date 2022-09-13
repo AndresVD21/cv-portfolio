@@ -13,8 +13,40 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "domain:cv-angular",
+                "onlyDependOnLibsWithTags": [
+                  "domain:cv-angular",
+                  "domain:shared",
+                  "domain:data",
+                  "domain:api",
+                  "domain:utils"
+                ]
+              },
+              {
+                "sourceTag": "domain:cv-react",
+                "onlyDependOnLibsWithTags": [
+                  "domain:cv-react",
+                  "domain:shared",
+                  "domain:data",
+                  "domain:api",
+                  "domain:utils"
+                ]
+              },
+              {
+                "sourceTag": "domain:api",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": ["domain:shared"]
+              },
+              {
+                "sourceTag": "domain:utils",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:api-next",
+                "onlyDependOnLibsWithTags": ["domain:data"]
               }
             ]
           }
