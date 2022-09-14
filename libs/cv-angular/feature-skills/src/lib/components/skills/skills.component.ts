@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LanguageModel, SkillModel } from '@cv-portfolio/data';
-import { reorderLanguages } from '@cv-portfolio/utils';
+import { reorderLanguages, reorderSkills } from '@cv-portfolio/utils';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
   faAngular,
@@ -69,13 +69,13 @@ export class SkillsComponent implements OnInit, OnDestroy {
   getSkills() {
     this.isLoading.skills = true;
     this.skillsService
-      .getSkills()
+      .getSkillsList()
       .pipe(
         finalize(() => (this.isLoading.skills = false)),
         takeUntil(this.$destroy)
       )
       .subscribe(({ data }) => {
-        this.skills = data ? [...data] : [];
+        this.skills = reorderSkills(data || []);
       });
   }
 

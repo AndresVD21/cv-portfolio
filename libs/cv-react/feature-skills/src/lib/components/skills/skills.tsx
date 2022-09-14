@@ -24,14 +24,18 @@ import {
 } from '@cv-portfolio/shared/react-ui';
 import { getLanguages } from '../../services/languages.service';
 import { Languages } from '../languages/languages';
-import { reorderLanguages } from '@cv-portfolio/utils';
+import { reorderLanguages, reorderSkills } from '@cv-portfolio/utils';
+import { finalize, Subject, takeUntil } from 'rxjs';
 
 /* eslint-disable-next-line */
 export interface SkillsProps {
   apiUrl: string;
+  functionsUrl: string;
 }
 
-export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
+export const Skills: React.FC<SkillsProps> = ({ apiUrl, functionsUrl }) => {
+  const $destroy = new Subject<boolean>();
+
   library.add(
     faHtml5,
     faJs,
@@ -57,24 +61,35 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl }) => {
   useEffect(() => {
     getSkills();
     getLanguagesList();
+
+    return () => {
+      $destroy.next(true);
+      $destroy.unsubscribe();
+    };
   }, []);
 
-  const getSkills = async () => {
+  const getSkills = () => {
     setLoadingSkills(true);
-    const {
-      data: { data },
-    } = await getSkillList(apiUrl);
-    setLoadingSkills(false);
-    setSkills(data ? [...data] : []);
+    getSkillList(apiUrl)
+      .pipe(
+        finalize(() => setLoadingSkills(false)),
+        takeUntil($destroy)
+      )
+      .subscribe(({ data }) => {
+        setSkills(data ? [...reorderSkills(data)] : []);
+      });
   };
 
   const getLanguagesList = async () => {
     setLoadingLangs(true);
-    const {
-      data: { data },
-    } = await getLanguages(apiUrl);
-    setLoadingLangs(false);
-    setLanguages(data ? [...reorderLanguages(data)] : []);
+    getLanguages(apiUrl)
+      .pipe(
+        finalize(() => setLoadingLangs(false)),
+        takeUntil($destroy)
+      )
+      .subscribe(({ data }) => {
+        setLanguages(data ? [...reorderLanguages(data)] : []);
+      });
   };
 
   return (

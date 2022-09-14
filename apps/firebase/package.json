@@ -1,0 +1,10 @@
+{
+  "name": "@cv-portfolio/firebase",
+  "description": "Firebase functions package",
+  "scripts": {
+    "build": "cd ../../ && nx run firebase:build --with-deps",
+    "serve": "npm run build && firebase emulators:start --only functions --config firebase.json",
+    "deploy": "firebase deploy --only functions --config firebase.json"
+  },
+  "main": "src/main.js"
+}

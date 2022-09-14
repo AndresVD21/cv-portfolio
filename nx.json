@@ -63,5 +63,14 @@
       }
     }
   },
-  "defaultProject": "cv-angular"
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default"
+    ],
+    "sharedGlobals": []
+  }
 }

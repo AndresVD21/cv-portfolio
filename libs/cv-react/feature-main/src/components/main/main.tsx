@@ -17,28 +17,40 @@ import {
   NoData,
   Space,
 } from '@cv-portfolio/shared/react-ui';
+import { finalize, Subject, takeUntil } from 'rxjs';
 
 /* eslint-disable-next-line */
 export interface MainProps {
   apiUrl: string;
+  functionsUrl: string;
 }
 
-export const Main: React.FC<MainProps> = ({ apiUrl }) => {
+export const Main: React.FC<MainProps> = ({ apiUrl, functionsUrl }) => {
+  const $destroy = new Subject<boolean>();
+
   library.add(faAddressCard, faFolderOpen, faFire);
   const [jobs, setJobs] = useState<JobModel[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getHistory();
+
+    return () => {
+      $destroy.next(true);
+      $destroy.unsubscribe();
+    };
   }, []);
 
-  const getHistory = async () => {
+  const getHistory = () => {
     setLoading(true);
-    const {
-      data: { data },
-    } = await getJobHistory(apiUrl);
-    setLoading(false);
-    setJobs(data ? [...data] : []);
+    getJobHistory(apiUrl)
+      .pipe(
+        finalize(() => setLoading(false)),
+        takeUntil($destroy)
+      )
+      .subscribe(({ data }) => {
+        setJobs(data ? [...data] : []);
+      });
   };
 
   return (

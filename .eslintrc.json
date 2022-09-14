@@ -19,7 +19,8 @@
                   "domain:shared",
                   "domain:data",
                   "domain:api",
-                  "domain:utils"
+                  "domain:utils",
+                  "domain:config"
                 ]
               },
               {
@@ -29,7 +30,8 @@
                   "domain:shared",
                   "domain:data",
                   "domain:api",
-                  "domain:utils"
+                  "domain:utils",
+                  "domain:firebase"
                 ]
               },
               {
@@ -47,6 +49,18 @@
               {
                 "sourceTag": "domain:api-next",
                 "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTags": "domain:firebase",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:data",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": "*"
               }
             ]
           }
