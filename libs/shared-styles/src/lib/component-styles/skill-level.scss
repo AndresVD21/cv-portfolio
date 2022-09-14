@@ -1,0 +1,10 @@
+@use '../variables';
+
+.skill-level {
+  height: 1em;
+  background-color: variables.$slate-light;
+
+  &:hover {
+    background-color: variables.$slate;
+  }
+}

@@ -1,0 +1,55 @@
+@use '../variables';
+@use '../colors';
+@use '../queries';
+@use '../utilities-styles/section.scss';
+@use '../mixins/container.scss' as container;
+@use '../utilities-styles/feature-container.scss';
+@use '../mixins/wrapper.scss' as *;
+@use '../mixins/cursor-pointer.scss' as cursor;
+
+@include container.container;
+@include container.container-query;
+@include cursor.cursor-pointer;
+@include cursor.marker-cursor-pointer;
+
+.cv-portfolio-skills-container {
+  background-color: variables.$blue-dark;
+
+  .working-technologies {
+    padding: 1em;
+    border: 3px solid variables.$slate-light;
+    // margin: 0 auto;
+    min-width: 90%;
+    .title {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-bottom: 1em;
+      display: block;
+      font-weight: lighter;
+      text-align: center;
+    }
+    .technologies-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .tech-icon {
+        font-size: 2.5em;
+      }
+    }
+  }
+
+  .skills {
+    padding-top: 2em;
+  }
+
+  @include wrapper;
+}
+
+@include queries.screen(lg) {
+  .cv-portfolio-skills-container {
+    .working-technologies {
+      min-width: 70%;
+    }
+  }
+}

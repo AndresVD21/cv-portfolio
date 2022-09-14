@@ -1,0 +1,81 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "domain:cv-angular",
+                "onlyDependOnLibsWithTags": [
+                  "domain:cv-angular",
+                  "domain:shared",
+                  "domain:data",
+                  "domain:api",
+                  "domain:utils",
+                  "domain:config"
+                ]
+              },
+              {
+                "sourceTag": "domain:cv-react",
+                "onlyDependOnLibsWithTags": [
+                  "domain:cv-react",
+                  "domain:shared",
+                  "domain:data",
+                  "domain:api",
+                  "domain:utils",
+                  "domain:firebase"
+                ]
+              },
+              {
+                "sourceTag": "domain:api",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": ["domain:shared"]
+              },
+              {
+                "sourceTag": "domain:utils",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:api-next",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTags": "domain:firebase",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "domain:data",
+                "onlyDependOnLibsWithTags": ["domain:data"]
+              },
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": "*"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<div class="employ">
+  <div class="employ-data" [ngClass]="{ current: job.isCurrentJob }">
+    <fa-icon
+      [icon]="['fas', 'fire']"
+      class="current-job-icon"
+      [size]="'2x'"
+      *ngIf="job.isCurrentJob"
+    ></fa-icon>
+    <p class="employ-header">
+      <span class="employ-role-name">{{ job.roleName }}</span>
+      at
+      <span class="employ-company">{{ job.company }}, </span>
+      <span class="employ-location">{{ job.location }}</span>
+    </p>
+    <p class="employ-date-range">
+      <span class="date-start_month">{{ job.dateStart?.month }} </span>
+      <span class="date-start_year">{{ job.dateStart?.year }}</span>
+      -
+      <ng-container *ngIf="!job.isCurrentJob">
+        <span class="date-end_month">{{ job.dateEnd?.month }} </span>
+        <span class="date-end_year">{{ job.dateEnd?.year }}</span>
+      </ng-container>
+      <ng-container *ngIf="job.isCurrentJob">
+        <span class="present">Present</span>
+      </ng-container>
+    </p>
+    <div class="employ-functions">
+      <ul class="functions-list">
+        <li class="function-item" *ngFor="let function of job.jobFunctions">
+          {{ function }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

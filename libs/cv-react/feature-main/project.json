@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cv-react/feature-main/src",
+  "projectType": "library",
+  "tags": ["domain:cv-react"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/cv-react/feature-main/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cv-react/feature-main"],
+      "options": {
+        "jestConfig": "libs/cv-react/feature-main/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

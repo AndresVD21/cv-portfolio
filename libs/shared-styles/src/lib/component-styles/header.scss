@@ -1,0 +1,31 @@
+@use '../variables';
+@use '../queries';
+
+.name-container {
+  border: 3px solid variables.$slate-light;
+  padding: 2em;
+  .name {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    display: block;
+    font-weight: lighter;
+  }
+}
+
+@include queries.screen(lg) {
+  .name-container {
+    width: 50%;
+    min-width: 550px;
+    margin: 1em 0;
+
+    .name {
+      font-size: 3rem;
+    }
+
+    .resume {
+      font-size: 1.2rem;
+      letter-spacing: 1.2px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<div class="employ-container" *ngIf="jobs.length > 0; else no_jobs">
+  <cv-portfolio-job *ngFor="let job of jobs" [job]="job"></cv-portfolio-job>
+</div>
+<ng-template #no_jobs>
+  <cv-portfolio-no-data
+    noDataText="There are no jobs registered."
+  ></cv-portfolio-no-data>
+</ng-template>

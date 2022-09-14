@@ -14,7 +14,42 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cv-portfolio/app-config": ["libs/app-config/src/index.ts"],
+      "@cv-portfolio/cv-angular/feature-main": [
+        "libs/cv-angular/feature-main/src/index.ts"
+      ],
+      "@cv-portfolio/cv-angular/feature-main/navbar": [
+        "libs/cv-angular/feature-main/navbar/src/index.ts"
+      ],
+      "@cv-portfolio/cv-angular/feature-skills": [
+        "libs/cv-angular/feature-skills/src/index.ts"
+      ],
+      "@cv-portfolio/cv-react/feature-main": [
+        "libs/cv-react/feature-main/src/index.ts"
+      ],
+      "@cv-portfolio/cv-react/feature-skills": [
+        "libs/cv-react/feature-skills/src/index.ts"
+      ],
+      "@cv-portfolio/data": ["libs/data/src/index.ts"],
+      "@cv-portfolio/data-access": ["libs/data-access/src/index.ts"],
+      "@cv-portfolio/myapp/feature-about": [
+        "libs/myapp/feature-about/src/index.ts"
+      ],
+      "@cv-portfolio/myapp/feature-home": [
+        "libs/myapp/feature-home/src/index.ts"
+      ],
+      "@cv-portfolio/myapp/feature-main": [
+        "libs/myapp/feature-main/src/index.ts"
+      ],
+      "@cv-portfolio/myapp/feature-settings": [
+        "libs/myapp/feature-settings/src/index.ts"
+      ],
+      "@cv-portfolio/shared-styles": ["libs/shared-styles/src/index.ts"],
+      "@cv-portfolio/shared/react-ui": ["libs/shared/react-ui/src/index.ts"],
+      "@cv-portfolio/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@cv-portfolio/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

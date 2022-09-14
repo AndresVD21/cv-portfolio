@@ -30,9 +30,12 @@ node_modules
 /coverage
 /libpeerconnection.log
 npm-debug.log
+firebase-debug.log
+ui-debug.log
 yarn-error.log
 testem.log
 /typings
+.angular/*
 
 # System Files
 .DS_Store

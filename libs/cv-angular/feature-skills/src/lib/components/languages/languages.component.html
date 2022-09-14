@@ -1,0 +1,14 @@
+<div class="langs-container">
+  <div
+    class="lang-item"
+    *ngFor="let lang of languages"
+    [class]="lang.isNative ? 'lang-native' : ''"
+  >
+    <p class="lang-name">
+      {{ lang.langName }}
+      <fa-icon *ngIf="lang.isNative" [icon]="['fas', 'star']"></fa-icon>
+    </p>
+    <span class="native" *ngIf="lang.isNative">Native</span>
+    <p class="lang-desc">{{ lang.langDesc }}</p>
+  </div>
+</div>

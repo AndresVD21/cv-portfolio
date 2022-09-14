@@ -1,0 +1,6 @@
+@use '../mixins/portfolio-container.scss' as main;
+
+.feature-container {
+  @include main.cv-portfolio-container;
+  height: 100%;
+}

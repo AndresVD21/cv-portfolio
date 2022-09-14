@@ -1,0 +1,22 @@
+@use './typography';
+@use './variables';
+@use './queries';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  color: variables.$slate-light;
+  background-color: variables.$blue-dark;
+}

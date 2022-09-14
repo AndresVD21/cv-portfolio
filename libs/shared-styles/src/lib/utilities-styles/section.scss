@@ -1,0 +1,34 @@
+@use '../variables';
+@use '../queries';
+
+section {
+  .section-title {
+    padding: 0.1em 0;
+    margin-bottom: 1em;
+    display: inline-block;
+    align-self: center;
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background-color: variables.$slate-light;
+      width: 0;
+      transition: width 0.5s;
+    }
+  }
+
+  &:hover {
+    .section-title::after {
+      width: 100%;
+    }
+  }
+}
+
+@include queries.screen(lg) {
+  section {
+    .section-title {
+      align-self: flex-start;
+      font-size: 2rem;
+    }
+  }
+}

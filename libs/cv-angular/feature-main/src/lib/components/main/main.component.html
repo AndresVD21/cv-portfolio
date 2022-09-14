@@ -1,0 +1,30 @@
+<main class="cv-portfolio-main-container feature-container">
+  <cv-portfolio-header-main></cv-portfolio-header-main>
+  <div class="wrapper">
+    <section id="about-me" class="about container">
+      <h2 class="section-title">
+        <fa-icon [icon]="['fas', 'address-card']"></fa-icon>
+        About me
+      </h2>
+      <h3 class="role">Frontend Developer</h3>
+      <p class="introduction">
+        Web developer with five years of experience in front-end development,
+        focused in making high scalable web applications with the best practices
+        using the angular framework, also with abilities of working with agile
+        methodologies and self learning.
+      </p>
+    </section>
+    <section id="employment-history" class="jobs container">
+      <h2 class="section-title">
+        <fa-icon [icon]="['fas', 'folder-open']"></fa-icon>
+        Jobs
+      </h2>
+      <cv-portfolio-jobs *ngIf="!isLoading" [jobs]="jobs"></cv-portfolio-jobs>
+      <cv-portfolio-loading
+        *ngIf="isLoading"
+        [loadingMessage]="loadingMessage"
+      ></cv-portfolio-loading>
+    </section>
+  </div>
+  <cv-portfolio-footer></cv-portfolio-footer>
+</main>
