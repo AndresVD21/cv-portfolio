@@ -48,7 +48,7 @@ export const Main: React.FC<MainProps> = ({ apiUrl, functionsUrl }) => {
         finalize(() => setLoading(false)),
         takeUntil($destroy)
       )
-      .subscribe(({ data }) => {
+      .subscribe(({ data: { data } }) => {
         setJobs(data ? [...data] : []);
       });
   };

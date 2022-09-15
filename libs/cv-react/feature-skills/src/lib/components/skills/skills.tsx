@@ -75,7 +75,7 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl, functionsUrl }) => {
         finalize(() => setLoadingSkills(false)),
         takeUntil($destroy)
       )
-      .subscribe(({ data }) => {
+      .subscribe(({ data: { data } }) => {
         setSkills(data ? [...reorderSkills(data)] : []);
       });
   };
@@ -87,7 +87,7 @@ export const Skills: React.FC<SkillsProps> = ({ apiUrl, functionsUrl }) => {
         finalize(() => setLoadingLangs(false)),
         takeUntil($destroy)
       )
-      .subscribe(({ data }) => {
+      .subscribe(({ data: { data } }) => {
         setLanguages(data ? [...reorderLanguages(data)] : []);
       });
   };
